@@ -3,7 +3,5 @@
     <string name="main_title">井字棋小游戏</string>
     <string name="main_button_1">双人模式</string>
     <string name="main_button_2">人机对局</string>
-    <string name="piece_for_X">X</string>
-    <string name="piece_for_O">O</string>
 
 </resources>

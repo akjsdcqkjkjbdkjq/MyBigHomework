@@ -13,34 +13,33 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:padding="20dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="20dp">
 
         <TextView
             android:id="@+id/main_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             android:gravity="center"
             android:text="@string/main_title"
-            android:layout_marginBottom="15dp"
             android:textSize="35sp" />
 
         <Button
             android:id="@+id/main_button_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             android:text="@string/main_button_1"
-            android:textSize="35sp"
-            android:layout_marginBottom="15dp"/>
+            android:textSize="35sp" />
 
         <Button
             android:id="@+id/main_button_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/main_button_2"
-            android:textSize="35sp"
             android:layout_marginBottom="15dp"
-            android:onClick="mainButton2Click"/>
+            android:text="@string/main_button_2"
+            android:textSize="35sp" />
     </LinearLayout>
 
 </LinearLayout>
