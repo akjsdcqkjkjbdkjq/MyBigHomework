@@ -2,8 +2,8 @@ package com.example.mybighomework;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,21 +11,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class ManVSManActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Button mb1 = findViewById(R.id.main_button_1);
-        mb1.setOnClickListener(v -> {
-            Intent ll = new Intent(this, ManVSManActivity.class);
-            startActivity(ll);
+        setContentView(R.layout.activity_man_vsman);
+        TextView tv1 = findViewById(R.id.man_vs_man_place_1);
+        tv1.setOnClickListener(v -> {
+            tv1.setText("@string/piece_for_O");
         });
-
-    }
-    public void mainButton2Click(View v){
-        Intent ll= new Intent(this, ManVSAIActivity.class);
-        startActivity(ll);
     }
 }

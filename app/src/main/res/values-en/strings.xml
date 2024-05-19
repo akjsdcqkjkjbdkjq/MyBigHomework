@@ -4,4 +4,6 @@
     <string name="main_title">Tic-Tac-Toe</string>
     <string name="main_button_1">man vs man</string>
     <string name="main_button_2">man vs ai</string>
+    <string name="piece_for_X">X</string>
+    <string name="piece_for_O">O</string>
 </resources>
