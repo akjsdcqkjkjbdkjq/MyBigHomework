@@ -9,6 +9,15 @@
     android:orientation="vertical"
     tools:context=".ManVSManActivity">
 
+    <TextView
+        android:id="@+id/man_vs_man_who_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="100sp"
+        android:layout_marginBottom="30dp"
+        android:text="O" />
+
     <LinearLayout
         android:layout_width="315dp"
         android:layout_height="100dp"
@@ -164,5 +173,14 @@
             android:text=""
             android:textSize="50sp" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/man_vs_man_who_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="100sp"
+        android:layout_marginTop="30dp"
+        android:text="" />
 
 </LinearLayout>

@@ -21,7 +21,7 @@ public class ManVSManActivity extends AppCompatActivity {
             {0, 0, 0}
     };
     int clock = 0;
-
+    Boolean res=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,13 +41,23 @@ public class ManVSManActivity extends AppCompatActivity {
             judge_vertical();
             judge_horizontal();
             judge_cross();
-            if(clock==9){
+            if(set(clock).equals("O")){
+                TextView who1 = findViewById(R.id.man_vs_man_who_1);
+                who1.setText(set(clock));
+                TextView who2 = findViewById(R.id.man_vs_man_who_2);
+                who2.setText("");
+            }else{
+                TextView who1 = findViewById(R.id.man_vs_man_who_1);
+                who1.setText("");
+                TextView who2 = findViewById(R.id.man_vs_man_who_2);
+                who2.setText(set(clock));
+            }
+            if(clock==9&&!res){
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("GAME OVER").setMessage("EVEN").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent ll = new Intent(ManVSManActivity.this, ManVSManActivity.class);
-                        startActivity(ll);
+                        recreate();
                     }
                 }).setNegativeButton("END", new DialogInterface.OnClickListener() {
                     @Override
@@ -73,13 +83,23 @@ public class ManVSManActivity extends AppCompatActivity {
             judge_vertical();
             judge_horizontal();
             judge_cross();
-            if(clock==9){
+            if(set(clock).equals("O")){
+                TextView who1 = findViewById(R.id.man_vs_man_who_1);
+                who1.setText(set(clock));
+                TextView who2 = findViewById(R.id.man_vs_man_who_2);
+                who2.setText("");
+            }else{
+                TextView who1 = findViewById(R.id.man_vs_man_who_1);
+                who1.setText("");
+                TextView who2 = findViewById(R.id.man_vs_man_who_2);
+                who2.setText(set(clock));
+            }
+            if(clock==9&&!res){
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("GAME OVER").setMessage("EVEN").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent ll = new Intent(ManVSManActivity.this, ManVSManActivity.class);
-                        startActivity(ll);
+                        recreate();
                     }
                 }).setNegativeButton("END", new DialogInterface.OnClickListener() {
                     @Override
@@ -105,13 +125,23 @@ public class ManVSManActivity extends AppCompatActivity {
             judge_vertical();
             judge_horizontal();
             judge_cross();
-            if(clock==9){
+            if(set(clock).equals("O")){
+                TextView who1 = findViewById(R.id.man_vs_man_who_1);
+                who1.setText(set(clock));
+                TextView who2 = findViewById(R.id.man_vs_man_who_2);
+                who2.setText("");
+            }else{
+                TextView who1 = findViewById(R.id.man_vs_man_who_1);
+                who1.setText("");
+                TextView who2 = findViewById(R.id.man_vs_man_who_2);
+                who2.setText(set(clock));
+            }
+            if(clock==9&&!res){
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("GAME OVER").setMessage("EVEN").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent ll = new Intent(ManVSManActivity.this, ManVSManActivity.class);
-                        startActivity(ll);
+                        recreate();
                     }
                 }).setNegativeButton("END", new DialogInterface.OnClickListener() {
                     @Override
@@ -137,13 +167,23 @@ public class ManVSManActivity extends AppCompatActivity {
             judge_vertical();
             judge_horizontal();
             judge_cross();
-            if(clock==9){
+            if(set(clock).equals("O")){
+                TextView who1 = findViewById(R.id.man_vs_man_who_1);
+                who1.setText(set(clock));
+                TextView who2 = findViewById(R.id.man_vs_man_who_2);
+                who2.setText("");
+            }else{
+                TextView who1 = findViewById(R.id.man_vs_man_who_1);
+                who1.setText("");
+                TextView who2 = findViewById(R.id.man_vs_man_who_2);
+                who2.setText(set(clock));
+            }
+            if(clock==9&&!res){
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("GAME OVER").setMessage("EVEN").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent ll = new Intent(ManVSManActivity.this, ManVSManActivity.class);
-                        startActivity(ll);
+                        recreate();
                     }
                 }).setNegativeButton("END", new DialogInterface.OnClickListener() {
                     @Override
@@ -169,13 +209,23 @@ public class ManVSManActivity extends AppCompatActivity {
             judge_vertical();
             judge_horizontal();
             judge_cross();
-            if(clock==9){
+            if(set(clock).equals("O")){
+                TextView who1 = findViewById(R.id.man_vs_man_who_1);
+                who1.setText(set(clock));
+                TextView who2 = findViewById(R.id.man_vs_man_who_2);
+                who2.setText("");
+            }else{
+                TextView who1 = findViewById(R.id.man_vs_man_who_1);
+                who1.setText("");
+                TextView who2 = findViewById(R.id.man_vs_man_who_2);
+                who2.setText(set(clock));
+            }
+            if(clock==9&&!res){
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("GAME OVER").setMessage("EVEN").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent ll = new Intent(ManVSManActivity.this, ManVSManActivity.class);
-                        startActivity(ll);
+                        recreate();
                     }
                 }).setNegativeButton("END", new DialogInterface.OnClickListener() {
                     @Override
@@ -201,13 +251,23 @@ public class ManVSManActivity extends AppCompatActivity {
             judge_vertical();
             judge_horizontal();
             judge_cross();
-            if(clock==9){
+            if(set(clock).equals("O")){
+                TextView who1 = findViewById(R.id.man_vs_man_who_1);
+                who1.setText(set(clock));
+                TextView who2 = findViewById(R.id.man_vs_man_who_2);
+                who2.setText("");
+            }else{
+                TextView who1 = findViewById(R.id.man_vs_man_who_1);
+                who1.setText("");
+                TextView who2 = findViewById(R.id.man_vs_man_who_2);
+                who2.setText(set(clock));
+            }
+            if(clock==9&&!res){
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("GAME OVER").setMessage("EVEN").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent ll = new Intent(ManVSManActivity.this, ManVSManActivity.class);
-                        startActivity(ll);
+                        recreate();
                     }
                 }).setNegativeButton("END", new DialogInterface.OnClickListener() {
                     @Override
@@ -233,13 +293,23 @@ public class ManVSManActivity extends AppCompatActivity {
             judge_vertical();
             judge_horizontal();
             judge_cross();
-            if(clock==9){
+            if(set(clock).equals("O")){
+                TextView who1 = findViewById(R.id.man_vs_man_who_1);
+                who1.setText(set(clock));
+                TextView who2 = findViewById(R.id.man_vs_man_who_2);
+                who2.setText("");
+            }else{
+                TextView who1 = findViewById(R.id.man_vs_man_who_1);
+                who1.setText("");
+                TextView who2 = findViewById(R.id.man_vs_man_who_2);
+                who2.setText(set(clock));
+            }
+            if(clock==9&&!res){
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("GAME OVER").setMessage("EVEN").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent ll = new Intent(ManVSManActivity.this, ManVSManActivity.class);
-                        startActivity(ll);
+                        recreate();
                     }
                 }).setNegativeButton("END", new DialogInterface.OnClickListener() {
                     @Override
@@ -265,13 +335,23 @@ public class ManVSManActivity extends AppCompatActivity {
             judge_vertical();
             judge_horizontal();
             judge_cross();
-            if(clock==9){
+            if(set(clock).equals("O")){
+                TextView who1 = findViewById(R.id.man_vs_man_who_1);
+                who1.setText(set(clock));
+                TextView who2 = findViewById(R.id.man_vs_man_who_2);
+                who2.setText("");
+            }else{
+                TextView who1 = findViewById(R.id.man_vs_man_who_1);
+                who1.setText("");
+                TextView who2 = findViewById(R.id.man_vs_man_who_2);
+                who2.setText(set(clock));
+            }
+            if(clock==9&&!res){
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("GAME OVER").setMessage("EVEN").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent ll = new Intent(ManVSManActivity.this, ManVSManActivity.class);
-                        startActivity(ll);
+                        recreate();
                     }
                 }).setNegativeButton("END", new DialogInterface.OnClickListener() {
                     @Override
@@ -297,13 +377,23 @@ public class ManVSManActivity extends AppCompatActivity {
             judge_vertical();
             judge_horizontal();
             judge_cross();
-            if(clock==9){
+            if(set(clock).equals("O")){
+                TextView who1 = findViewById(R.id.man_vs_man_who_1);
+                who1.setText(set(clock));
+                TextView who2 = findViewById(R.id.man_vs_man_who_2);
+                who2.setText("");
+            }else{
+                TextView who1 = findViewById(R.id.man_vs_man_who_1);
+                who1.setText("");
+                TextView who2 = findViewById(R.id.man_vs_man_who_2);
+                who2.setText(set(clock));
+            }
+            if(clock==9&&!res){
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("GAME OVER").setMessage("EVEN").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent ll = new Intent(ManVSManActivity.this, ManVSManActivity.class);
-                        startActivity(ll);
+                        recreate();
                     }
                 }).setNegativeButton("END", new DialogInterface.OnClickListener() {
                     @Override
@@ -331,12 +421,12 @@ public class ManVSManActivity extends AppCompatActivity {
                 k += place[i][j];
             }
             if (k == 3) {
+                res=true;
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle("GAME OVER").setMessage("O\nWIN").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
+                builder.setTitle("GAME OVER").setMessage("WINNER IS O").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent ll = new Intent(ManVSManActivity.this, ManVSManActivity.class);
-                        startActivity(ll);
+                        recreate();
                     }
                 }).setNegativeButton("END", new DialogInterface.OnClickListener() {
                     @Override
@@ -347,12 +437,12 @@ public class ManVSManActivity extends AppCompatActivity {
                 builder.create().show();
                 break;
             } else if (k == -3) {
+                res=true;
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle("GAME OVER").setMessage("X\nWIN").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
+                builder.setTitle("GAME OVER").setMessage("WINNER IS X").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent ll = new Intent(ManVSManActivity.this, ManVSManActivity.class);
-                        startActivity(ll);
+                        recreate();
                     }
                 }).setNegativeButton("END", new DialogInterface.OnClickListener() {
                     @Override
@@ -373,12 +463,12 @@ public class ManVSManActivity extends AppCompatActivity {
                 k += place[j][i];
             }
             if (k == 3) {
+                res=true;
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle("GAME OVER").setMessage("O\nWIN").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
+                builder.setTitle("GAME OVER").setMessage("WINNER IS O").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent ll = new Intent(ManVSManActivity.this, ManVSManActivity.class);
-                        startActivity(ll);
+                        recreate();
                     }
                 }).setNegativeButton("END", new DialogInterface.OnClickListener() {
                     @Override
@@ -389,12 +479,12 @@ public class ManVSManActivity extends AppCompatActivity {
                 builder.create().show();
                 break;
             } else if (k == -3) {
+                res=true;
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle("GAME OVER").setMessage("X\nWIN").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
+                builder.setTitle("GAME OVER").setMessage("WINNER IS X").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent ll = new Intent(ManVSManActivity.this, ManVSManActivity.class);
-                        startActivity(ll);
+                        recreate();
                     }
                 }).setNegativeButton("END", new DialogInterface.OnClickListener() {
                     @Override
@@ -412,12 +502,12 @@ public class ManVSManActivity extends AppCompatActivity {
         int x = place[0][0] + place[1][1] + place[2][2];
         int y = place[0][2] + place[1][1] + place[2][0];
         if (x == 3 || y == 3) {
+            res=true;
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("GAME OVER").setMessage("O\nWIN").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
+            builder.setTitle("GAME OVER").setMessage("WINNER IS O").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Intent ll = new Intent(ManVSManActivity.this, ManVSManActivity.class);
-                    startActivity(ll);
+                    recreate();
                 }
             }).setNegativeButton("END", new DialogInterface.OnClickListener() {
                 @Override
@@ -427,12 +517,12 @@ public class ManVSManActivity extends AppCompatActivity {
             });
             builder.create().show();
         } else if (x == -3 || y == -3) {
+            res=true;
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("GAME OVER").setMessage("X\nWIN").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
+            builder.setTitle("GAME OVER").setMessage("WINNER IS X").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Intent ll = new Intent(ManVSManActivity.this, ManVSManActivity.class);
-                    startActivity(ll);
+                    recreate();
                 }
             }).setNegativeButton("END", new DialogInterface.OnClickListener() {
                 @Override
