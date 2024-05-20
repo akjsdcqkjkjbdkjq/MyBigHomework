@@ -8,4 +8,9 @@
     <string name="mmw2">O\'s turn</string>
     <string name="maw1">AI is thinking</string>
     <string name="maw2">Your turn</string>
+    <string name="gend">Game Over</string>
+    <string name="owin">Winner  Is O</string>
+    <string name="xwin">Winner  Is X</string>
+    <string name="newgame">New Game</string>
+    <string name="endgame">End Game</string>
 </resources>

@@ -238,12 +238,12 @@ public class ManVSManActivity extends AppCompatActivity {
 
     public void show_O_win() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("GAME OVER").setMessage("WINNER IS O").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
+        builder.setTitle(R.string.gend).setMessage(R.string.owin).setPositiveButton(R.string.newgame, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 recreate();
             }
-        }).setNegativeButton("END", new DialogInterface.OnClickListener() {
+        }).setNegativeButton(R.string.endgame, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 finish();
@@ -254,12 +254,12 @@ public class ManVSManActivity extends AppCompatActivity {
 
     public void show_X_win() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("GAME OVER").setMessage("WINNER IS X").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
+        builder.setTitle(R.string.gend).setMessage(R.string.xwin).setPositiveButton(R.string.newgame, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 recreate();
             }
-        }).setNegativeButton("END", new DialogInterface.OnClickListener() {
+        }).setNegativeButton(R.string.endgame, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 finish();

@@ -8,4 +8,9 @@
     <string name="mmw2">O的回合</string>
     <string name="maw1">思考中</string>
     <string name="maw2">到你了</string>
+    <string name="gend">游戏结束</string>
+    <string name="owin">O获胜</string>
+    <string name="xwin">X获胜</string>
+    <string name="newgame">新游戏</string>
+    <string name="endgame">结束游戏</string>
 </resources>
