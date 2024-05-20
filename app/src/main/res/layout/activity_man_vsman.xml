@@ -9,14 +9,22 @@
     android:orientation="vertical"
     tools:context=".ManVSManActivity">
 
+    <ProgressBar
+        android:id="@+id/man_vs_man_wait_1"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
     <TextView
         android:id="@+id/man_vs_man_who_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="100sp"
         android:layout_marginBottom="30dp"
-        android:text="O" />
+        android:gravity="center"
+        android:text="X's turn"
+        android:textSize="50sp"
+        android:visibility="invisible" />
 
     <LinearLayout
         android:layout_width="315dp"
@@ -178,9 +186,17 @@
         android:id="@+id/man_vs_man_who_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="100sp"
         android:layout_marginTop="30dp"
-        android:text="" />
+        android:gravity="center"
+        android:text="O's turn"
+        android:textSize="50sp"
+        android:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/man_vs_man_wait_2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible" />
 
 </LinearLayout>
