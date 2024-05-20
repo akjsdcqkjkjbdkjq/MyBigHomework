@@ -2,18 +2,11 @@ package com.example.mybighomework;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class ManVSManActivity extends AppCompatActivity {
     int[][] place = {
@@ -22,7 +15,7 @@ public class ManVSManActivity extends AppCompatActivity {
             {0, 0, 0}
     };
     int clock = 0;
-    Boolean res = false;
+    int res = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,201 +23,88 @@ public class ManVSManActivity extends AppCompatActivity {
         setContentView(R.layout.activity_man_vsman);
     }
 
-    public void wait_exchange() {
-//        ProgressBar wait1 = findViewById(R.id.man_vs_man_wait_1);
-        TextView who1 = findViewById(R.id.man_vs_man_who_1);
-//        ProgressBar wait2 = findViewById(R.id.man_vs_man_wait_2);
-        TextView who2 = findViewById(R.id.man_vs_man_who_2);
-        if (set(clock).equals("O")) {
-            who1.setVisibility(View.INVISIBLE);
-//            wait1.setVisibility(View.INVISIBLE);
-            who2.setVisibility(View.VISIBLE);
-//            wait2.setVisibility(View.VISIBLE);
-        } else {
-            who1.setVisibility(View.VISIBLE);
-//            wait1.setVisibility(View.VISIBLE);
-            who2.setVisibility(View.INVISIBLE);
-//            wait2.setVisibility(View.INVISIBLE);
-        }
-    }
-
-    public void show_even() {
-        if (clock == 9 && !res) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("GAME OVER").setMessage("EVEN").setPositiveButton("ONE MORE ROUND", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    recreate();
+    public void man_vs_man_place(View v) {
+        String s = set(clock);
+        if (v.getId() == R.id.man_vs_man_place_1) {
+            if (place[0][0] == 0) {
+                if (s.equals("O")) {
+                    place[0][0] = 1;
+                } else {
+                    place[0][0] = -1;
                 }
-            }).setNegativeButton("END", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    finish();
+            }
+        } else if (v.getId() == R.id.man_vs_man_place_2) {
+            if (place[0][1] == 0) {
+                if (s.equals("O")) {
+                    place[0][1] = 1;
+                } else {
+                    place[0][1] = -1;
                 }
-            });
-            builder.create().show();
-        }
-    }
-
-    public void man_vs_man_place_1(View v) {
-        if (place[0][0] == 0) {
-            TextView place1 = findViewById(R.id.man_vs_man_place_1);
-            place1.setText(set(clock));
-            if (set(clock).equals("O")) {
-                place[0][0] = 1;
-            } else {
-                place[0][0] = -1;
             }
-            clock++;
-            judge_vertical();
-            judge_horizontal();
-            judge_cross();
-            wait_exchange();
-            show_even();
-        }
-    }
-
-    public void man_vs_man_place_2(View v) {
-        if (place[0][1] == 0) {
-            TextView place1 = findViewById(R.id.man_vs_man_place_2);
-            place1.setText(set(clock));
-            if (set(clock).equals("O")) {
-                place[0][1] = 1;
-            } else {
-                place[0][1] = -1;
+        } else if (v.getId() == R.id.man_vs_man_place_3) {
+            if (place[0][2] == 0) {
+                if (s.equals("O")) {
+                    place[0][2] = 1;
+                } else {
+                    place[0][2] = -1;
+                }
             }
-            clock++;
-            judge_vertical();
-            judge_horizontal();
-            judge_cross();
-            wait_exchange();
-            show_even();
-        }
-    }
-
-    public void man_vs_man_place_3(View v) {
-        if (place[0][2] == 0) {
-            TextView place1 = findViewById(R.id.man_vs_man_place_3);
-            place1.setText(set(clock));
-            if (set(clock).equals("O")) {
-                place[0][2] = 1;
-            } else {
-                place[0][2] = -1;
+        } else if (v.getId() == R.id.man_vs_man_place_4) {
+            if (place[1][0] == 0) {
+                if (s.equals("O")) {
+                    place[1][0] = 1;
+                } else {
+                    place[1][0] = -1;
+                }
             }
-            clock++;
-            judge_vertical();
-            judge_horizontal();
-            judge_cross();
-            wait_exchange();
-            show_even();
-        }
-    }
-
-    public void man_vs_man_place_4(View v) {
-        if (place[1][0] == 0) {
-            TextView place1 = findViewById(R.id.man_vs_man_place_4);
-            place1.setText(set(clock));
-            if (set(clock).equals("O")) {
-                place[1][0] = 1;
-            } else {
-                place[1][0] = -1;
+        } else if (v.getId() == R.id.man_vs_man_place_5) {
+            if (place[1][1] == 0) {
+                if (s.equals("O")) {
+                    place[1][1] = 1;
+                } else {
+                    place[1][1] = -1;
+                }
             }
-            clock++;
-            judge_vertical();
-            judge_horizontal();
-            judge_cross();
-            wait_exchange();
-            show_even();
-        }
-    }
-
-    public void man_vs_man_place_5(View v) {
-        if (place[1][1] == 0) {
-            TextView place1 = findViewById(R.id.man_vs_man_place_5);
-            place1.setText(set(clock));
-            if (set(clock).equals("O")) {
-                place[1][1] = 1;
-            } else {
-                place[1][1] = -1;
+        } else if (v.getId() == R.id.man_vs_man_place_6) {
+            if (place[1][2] == 0) {
+                if (s.equals("O")) {
+                    place[1][2] = 1;
+                } else {
+                    place[1][2] = -1;
+                }
             }
-            clock++;
-            judge_vertical();
-            judge_horizontal();
-            judge_cross();
-            wait_exchange();
-            show_even();
-        }
-    }
-
-    public void man_vs_man_place_6(View v) {
-        if (place[1][2] == 0) {
-            TextView place1 = findViewById(R.id.man_vs_man_place_6);
-            place1.setText(set(clock));
-            if (set(clock).equals("O")) {
-                place[1][2] = 1;
-            } else {
-                place[1][2] = -1;
+        } else if (v.getId() == R.id.man_vs_man_place_7) {
+            if (place[2][0] == 0) {
+                if (s.equals("O")) {
+                    place[2][0] = 1;
+                } else {
+                    place[2][0] = -1;
+                }
             }
-            clock++;
-            judge_vertical();
-            judge_horizontal();
-            judge_cross();
-            wait_exchange();
-            show_even();
-        }
-    }
-
-    public void man_vs_man_place_7(View v) {
-        if (place[2][0] == 0) {
-            TextView place1 = findViewById(R.id.man_vs_man_place_7);
-            place1.setText(set(clock));
-            if (set(clock).equals("O")) {
-                place[2][0] = 1;
-            } else {
-                place[2][0] = -1;
+        } else if (v.getId() == R.id.man_vs_man_place_8) {
+            if (place[2][1] == 0) {
+                if (s.equals("O")) {
+                    place[2][1] = 1;
+                } else {
+                    place[2][1] = -1;
+                }
             }
-            clock++;
-            judge_vertical();
-            judge_horizontal();
-            judge_cross();
-            wait_exchange();
-            show_even();
-        }
-    }
-
-    public void man_vs_man_place_8(View v) {
-        if (place[2][1] == 0) {
-            TextView place1 = findViewById(R.id.man_vs_man_place_8);
-            place1.setText(set(clock));
-            if (set(clock).equals("O")) {
-                place[2][1] = 1;
-            } else {
-                place[2][1] = -1;
+        } else if (v.getId() == R.id.man_vs_man_place_9) {
+            if (place[2][2] == 0) {
+                if (s.equals("O")) {
+                    place[2][2] = 1;
+                } else {
+                    place[2][2] = -1;
+                }
             }
-            clock++;
-            judge_vertical();
-            judge_horizontal();
-            judge_cross();
-            wait_exchange();
-            show_even();
         }
-    }
-
-    public void man_vs_man_place_9(View v) {
-        if (place[2][2] == 0) {
-            TextView place1 = findViewById(R.id.man_vs_man_place_9);
-            place1.setText(set(clock));
-            if (set(clock).equals("O")) {
-                place[2][2] = 1;
-            } else {
-                place[2][2] = -1;
-            }
-            clock++;
-            judge_vertical();
-            judge_horizontal();
-            judge_cross();
-            wait_exchange();
-            show_even();
+        wait_exchange(s);
+        TextView tv = findViewById(v.getId());
+        tv.setText(s);
+        clock++;
+        judge();
+        if (clock == 9 && res == 0) {
+            show(res);
         }
     }
 
@@ -236,9 +116,29 @@ public class ManVSManActivity extends AppCompatActivity {
         }
     }
 
-    public void show_O_win() {
+    public void wait_exchange(String s) {
+        TextView who1 = findViewById(R.id.man_vs_man_who_1);
+        TextView who2 = findViewById(R.id.man_vs_man_who_2);
+        if (s.equals("X")) {
+            who1.setVisibility(View.INVISIBLE);
+            who2.setVisibility(View.VISIBLE);
+        } else {
+            who1.setVisibility(View.VISIBLE);
+            who2.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    public void show(int r) {
+        int s = 0;
+        if (r == 0) {
+            s = R.string.even;
+        } else if (r == 1) {
+            s = R.string.owin;
+        } else if (r == -1) {
+            s = R.string.xwin;
+        }
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.gend).setMessage(R.string.owin).setPositiveButton(R.string.newgame, new DialogInterface.OnClickListener() {
+        builder.setTitle(R.string.gend).setMessage(s).setPositiveButton(R.string.newgame, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 recreate();
@@ -252,67 +152,45 @@ public class ManVSManActivity extends AppCompatActivity {
         builder.create().show();
     }
 
-    public void show_X_win() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.gend).setMessage(R.string.xwin).setPositiveButton(R.string.newgame, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                recreate();
-            }
-        }).setNegativeButton(R.string.endgame, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
-            }
-        });
-        builder.create().show();
-    }
-
-    public void judge_horizontal() {
+    public void judge() {
         for (int i = 0; i < 3; i++) {
             int k = 0;
             for (int j = 0; j < 3; j++) {
                 k += place[i][j];
             }
             if (k == 3) {
-                res = true;
-                show_O_win();
+                res = 1;
+                show(res);
                 break;
             } else if (k == -3) {
-                res = true;
-                show_X_win();
+                res = -1;
+                show(res);
                 break;
             }
         }
-    }
-
-    public void judge_vertical() {
         for (int i = 0; i < 3; i++) {
             int k = 0;
             for (int j = 0; j < 3; j++) {
                 k += place[j][i];
             }
             if (k == 3) {
-                res = true;
-                show_O_win();
+                res = 1;
+                show(res);
                 break;
             } else if (k == -3) {
-                res = true;
-                show_X_win();
+                res = -1;
+                show(res);
                 break;
             }
         }
-    }
-
-    public void judge_cross() {
         int x = place[0][0] + place[1][1] + place[2][2];
         int y = place[0][2] + place[1][1] + place[2][0];
         if (x == 3 || y == 3) {
-            res = true;
-            show_O_win();
+            res = 1;
+            show(res);
         } else if (x == -3 || y == -3) {
-            res = true;
-            show_X_win();
+            res = -1;
+            show(res);
         }
     }
 }

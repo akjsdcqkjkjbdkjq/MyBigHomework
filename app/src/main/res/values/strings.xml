@@ -12,5 +12,6 @@
     <string name="xwin">X获胜</string>
     <string name="newgame">新游戏</string>
     <string name="endgame">结束游戏</string>
+    <string name="even">平局</string>
 
 </resources>

@@ -13,4 +13,5 @@
     <string name="xwin">Winner  Is X</string>
     <string name="newgame">New Game</string>
     <string name="endgame">End Game</string>
+    <string name="even">Even</string>
 </resources>
