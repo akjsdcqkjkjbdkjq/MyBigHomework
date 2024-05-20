@@ -31,20 +31,20 @@ public class ManVSManActivity extends AppCompatActivity {
     }
 
     public void wait_exchange() {
-        ProgressBar wait1 = findViewById(R.id.man_vs_man_wait_1);
+//        ProgressBar wait1 = findViewById(R.id.man_vs_man_wait_1);
         TextView who1 = findViewById(R.id.man_vs_man_who_1);
-        ProgressBar wait2 = findViewById(R.id.man_vs_man_wait_2);
+//        ProgressBar wait2 = findViewById(R.id.man_vs_man_wait_2);
         TextView who2 = findViewById(R.id.man_vs_man_who_2);
         if (set(clock).equals("O")) {
             who1.setVisibility(View.INVISIBLE);
-            wait1.setVisibility(View.INVISIBLE);
+//            wait1.setVisibility(View.INVISIBLE);
             who2.setVisibility(View.VISIBLE);
-            wait2.setVisibility(View.VISIBLE);
+//            wait2.setVisibility(View.VISIBLE);
         } else {
             who1.setVisibility(View.VISIBLE);
-            wait1.setVisibility(View.VISIBLE);
+//            wait1.setVisibility(View.VISIBLE);
             who2.setVisibility(View.INVISIBLE);
-            wait2.setVisibility(View.INVISIBLE);
+//            wait2.setVisibility(View.INVISIBLE);
         }
     }
 

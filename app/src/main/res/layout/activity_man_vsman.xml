@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:gravity="center"
-        android:text="X's turn"
+        android:text="@string/mmw1"
         android:textSize="50sp"
         android:visibility="invisible" />
 
@@ -188,7 +188,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:gravity="center"
-        android:text="O's turn"
+        android:text="@string/mmw2"
         android:textSize="50sp"
         android:visibility="visible" />
 
@@ -197,6 +197,6 @@
         style="?android:attr/progressBarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="visible" />
+        android:visibility="invisible" />
 
 </LinearLayout>

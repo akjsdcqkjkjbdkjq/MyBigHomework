@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:gravity="center"
-        android:text="Your turn"
+        android:text="@string/maw2"
         android:textSize="50sp"
         android:visibility="gone" />
     <TextView
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:gravity="center"
-        android:text="AI's turn"
+        android:text="@string/maw1"
         android:textSize="50sp"
         android:visibility="gone" />
 
@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
-        android:visibility="visible" />
+        android:visibility="invisible" />
 
     <LinearLayout
         android:layout_width="315dp"

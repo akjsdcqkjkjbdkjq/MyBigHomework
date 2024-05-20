@@ -3,5 +3,9 @@
     <string name="app_name">井字棋小游戏</string>
     <string name="main_title">井字棋小游戏</string>
     <string name="main_button_1">双人模式</string>
-    <string name="main_button_2">人机对局</string>
+    <string name="main_button_2">人机模式</string>
+    <string name="mmw1">X的回合</string>
+    <string name="mmw2">O的回合</string>
+    <string name="maw1">爷在思考</string>
+    <string name="maw2">到你了弟弟</string>
 </resources>
