@@ -32,7 +32,9 @@ public class ManVSAIActivity extends AppCompatActivity {
             man_vs_ai_place_1(findViewById(R.id.man_vs_man_place_1));
         }
     }
-
+//        162
+//        597
+//        483
     public void ai_turn() {
         if (isaifirst == 1) {
             if (clock == 2 && history[1] != 2 && history[1] != 3) {

@@ -6,6 +6,6 @@
     <string name="main_button_2">人机模式</string>
     <string name="mmw1">X的回合</string>
     <string name="mmw2">O的回合</string>
-    <string name="maw1">爷在思考</string>
-    <string name="maw2">到你了弟弟</string>
+    <string name="maw1">思考中</string>
+    <string name="maw2">到你了</string>
 </resources>
