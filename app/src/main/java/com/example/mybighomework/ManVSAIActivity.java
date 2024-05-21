@@ -16,910 +16,547 @@ public class ManVSAIActivity extends AppCompatActivity {
             {0, 0, 0},
             {0, 0, 0}
     };
-    int isaifirst = 1;//Math.abs((new Random(System.currentTimeMillis())).nextInt()) % 2;
+    int isaifirst = 1; //randint()%2;
     int clock = 0;
     int res = 0;
-    int[] history = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+    int[] history = {-1, -1, -1, -1, -1, -1, -1, -1, -1};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_man_vsaiactivity);
+        wait_exchange(set(clock + 1));
         if (isaifirst == 1) {
-            int i = 1; //randint() % 4;
-            switch (i) {
-                case 0:
-                    play(1);
-                    break;
-                case 1:
-                    play(3);
-                    break;
-                case 2:
-                    play(7);
-                    break;
-                case 3:
-                    play(9);
-                    break;
-            }
+            int i = randint() % 4;
+            play(i);
         }
     }
 
     public void ai_turn() {
         if (isaifirst == 1) {
-            if (history[0] == 1) {
-                if (history[1] == 5) {
-                    if (clock == 2) {
-                        int i = randint() % 3;
-                        switch (i) {
-                            case 0:
-                                play(6);
-                                break;
-                            case 1:
-                                play(8);
-                                break;
-                            case 2:
-                                play(9);
-                                break;
-                        }
-                    }
-                    if (history[2]==9){
-                        if (clock==4&&history[3]==3){
-                            play(7);
-                        } else if (clock==4&&history[3]==7) {
-                            play(3);
-                        } else if (clock==4&&history[3]==2) {
-                            play(8);
-                        } else if (clock==4&&history[3]==4) {
-                            play(6);
-                        } else if (clock==4&&history[3]==6) {
-                            play(4);
-                        } else if (clock==4&&history[3]==8) {
-                            play(2);
-                        }
-                        if (history[4]==7){
-                            if (clock==6&&history[5]!=4&&history[5]!=8){
-                                int i = randint() % 2;
-                                switch (i) {
-                                    case 0:
-                                        play(4);
-                                        break;
-                                    case 1:
-                                        play(8);
-                                        break;
-                                }
-                            } else if (clock==6&&history[5]==4) {
-                                play(8);
-                            } else if (clock==6) {
-                                play(4);
-                            }
-                        } else if (history[4]==3) {
-                            if (clock==6&&history[5]!=2&&history[5]!=6){
-                                int i = randint() % 2;
-                                switch (i) {
-                                    case 0:
-                                        play(2);
-                                        break;
-                                    case 1:
-                                        play(6);
-                                        break;
-                                }
-                            } else if (clock==6&&history[5]==2) {
-                                play(6);
-                            } else if (clock==6) {
-                                play(2);
-                            }
-                        } else if (history[4]==2) {
-                            if (clock==6&&history[5]!=3){
-                                play(3);
-                            } else if (clock==6){
-                                play(7);
-                            }
-                            if (history[6]==7){
-                                if (clock==8&&history[7]!=4){
-                                    play(4);
-                                } else if (clock==8) {
-                                    play(6);
-                                }
-                            }
-                        } else if (history[4]==4) {
-                            if (clock==6&&history[5]!=7){
-                                play(7);
-                            } else if (clock==6){
-                                play(3);
-                            }
-                            if (history[6]==3){
-                                if (clock==8&&history[7]!=2){
-                                    play(2);
-                                } else if (clock==8) {
-                                    play(8);
-                                }
-                            }
-                        } else if (history[4]==6) {
-                            if (clock==6&&history[5]!=3){
-                                play(3);
-                            } else if (clock==6){
-                                play(7);
-                            }
-                            if (history[6]==7){
-                                if (clock==8&&history[7]!=2){
-                                    play(2);
-                                } else if (clock==8) {
-                                    play(8);
-                                }
-                            }
-                        } else if (history[4]==8) {
-                            if (clock==6&&history[5]!=7){
-                                play(7);
-                            } else if (clock==6){
-                                play(3);
-                            }
-                            if (history[6]==7){
-                                if (clock==8&&history[7]!=6){
-                                    play(6);
-                                } else if (clock==8) {
-                                    play(4);
-                                }
-                            }
-                        }
-                    } else if (history[2] == 8) {
-                        if (clock==4&&(history[3]==2||history[3]==3||history[3]==9)){
-                            play(7);
-                        } else if (clock == 4 && history[3] == 6) {
-                            play(4);
-                        } else if (clock == 4 && history[3] == 4) {
-                            play(6);
-                        } else if (clock == 4 && history[3] == 7) {
-                            play(3);
-                        }
-                        if (history[4]==7){
-                            if (history[3]==9){
-                                if (clock==6&&history[5]!=4){
-                                    play(4);
-                                } else if (clock == 6) {
-                                    play(6);
-                                }
-                                if (history[6]==6){
-                                    if (clock==8&&history[7]!=3){
-                                        play(3);
-                                    } else if (clock==8) {
-                                        play(2);
-                                    }
-                                }
-                            }else {
-                                if (clock==6&&history[5]!=4&&history[5]!=9){
-                                    int i = randint() % 2;
-                                    switch (i) {
-                                        case 0:
-                                            play(4);
-                                            break;
-                                        case 1:
-                                            play(9);
-                                            break;
-                                    }
-                                } else if (clock == 6 && history[5] == 4) {
-                                    play(9);
-                                } else if (clock == 6) {
-                                    play(4);
-                                }
-                            }
-                        } else if (history[4] == 4) {
-                            if (clock==6&&history[5]!=7){
-                                play(7);
-                            } else if (clock == 6) {
-                                play(3);
-                            }
-                            if (history[6]==3){
-                                if (clock==8&&history[7]!=2){
-                                    play(2);
-                                } else if (clock==8) {
-                                    play(9);
-                                }
-                            }
-                        } else if (history[4] == 6) {
-                            if (clock==6&&(history[5]==7||history[5] == 9)){
-                                play(3);
-                            } else if (clock == 6 && history[5] == 3) {
-                                play(7);
-                            } else if (clock == 6 && history[5] == 2) {
-                                play(9);
-                            }
-                            if (history[6]==3){
-                                if (clock==8&&history[7]!=2){
-                                    play(2);
-                                } else if (clock==8&&history[5]==7) {
-                                    play(9);
-                                } else if (clock==8&&history[5]==9) {
-                                    play(7);
-                                }
-                            } else if (history[6] == 7) {
-                                if (clock==8&&history[7]!=9){
-                                    play(9);
-                                } else if (clock==8) {
-                                    play(2);
-                                }
-                            }
-                        } else if (history[4] == 3) {
-                            if (clock==6&&history[5]!=2){
-                                play(2);
-                            } else if (clock == 6) {
-                                play(9);
-                            }
-                            if (history[6]==9){
-                                if (clock==8&&history[7]!=6){
-                                    play(6);
-                                } else if (clock==8) {
-                                    play(4);
-                                }
-                            }
-                        }
-                    } else if (history[2] == 6) {
-                        if (clock==4&&(history[3]==4||history[3]==7||history[3]==9)){
-                            play(3);
-                        } else if (clock == 4 && history[3] == 8) {
-                            play(2);
-                        } else if (clock == 4 && history[3] == 2) {
-                            play(8);
-                        } else if (clock == 4 && history[3] == 3) {
-                            play(7);
-                        }
-                        if (history[4]==3){
-                            if (history[3]==9){
-                                if (clock==6&&history[5]!=2){
-                                    play(2);
-                                } else if (clock == 6) {
-                                    play(8);
-                                }
-                                if (history[6]==8){
-                                    if (clock==8&&history[7]!=7){
-                                        play(7);
-                                    } else if (clock==8) {
-                                        play(4);
-                                    }
-                                }
-                            }else {
-                                if (clock==6&&history[5]!=2&&history[5]!=9){
-                                    int i = randint() % 2;
-                                    switch (i) {
-                                        case 0:
-                                            play(2);
-                                            break;
-                                        case 1:
-                                            play(9);
-                                            break;
-                                    }
-                                } else if (clock == 6 && history[5] == 2) {
-                                    play(9);
-                                } else if (clock == 6) {
-                                    play(2);
-                                }
-                            }
-                        } else if (history[4] == 2) {
-                            if (clock==6&&history[5]!=3){
-                                play(3);
-                            } else if (clock == 6) {
-                                play(7);
-                            }
-                            if (history[6]==7){
-                                if (clock==8&&history[7]!=4){
-                                    play(4);
-                                } else if (clock==8) {
-                                    play(9);
-                                }
-                            }
-                        } else if (history[4] == 8) {
-                            if (clock==6&&(history[5]==3||history[5] == 9)){
-                                play(7);
-                            } else if (clock == 6 && history[5] == 7) {
-                                play(3);
-                            } else if (clock == 6 && history[5] == 4) {
-                                play(9);
-                            }
-                            if (history[6]==7){
-                                if (clock==8&&history[7]!=4){
-                                    play(4);
-                                } else if (clock==8&&history[5]==3) {
-                                    play(9);
-                                } else if (clock==8&&history[5]==9) {
-                                    play(3);
-                                }
-                            } else if (history[6] == 3) {
-                                if (clock==8&&history[7]!=9){
-                                    play(9);
-                                } else if (clock==8) {
-                                    play(4);
-                                }
-                            }
-                        } else if (history[4] == 7) {
-                            if (clock==6&&history[5]!=4){
-                                play(4);
-                            } else if (clock == 6) {
-                                play(9);
-                            }
-                            if (history[6]==9){
-                                if (clock==8&&history[7]!=8){
-                                    play(8);
-                                } else if (clock==8) {
-                                    play(2);
-                                }
-                            }
-                        }
-                    }
-                } else {
-                    if (clock == 2 && (history[1] == 6 || history[1] == 8 || history[1] == 9)) {
+            hardmodefirst(history[0]);
+        } else {
+            hardmodesecond(history[0]);
+        }
+    }
+
+    public void hardmodefirst(int k) {
+        if (history[1] == 8) {
+            if (clock == 2) {
+                int i = randint() % 3;
+                switch (i) {
+                    case 0:
+                        play((k + 2) % 4 + 4);
+                        break;
+                    case 1:
+                        play((k + 3) % 4 + 4);
+                        break;
+                    case 2:
+                        play((k + 2) % 4);
+                        break;
+                }
+            }
+            if (history[2] == (k + 2) % 4) {
+                if (clock == 4 && history[3] == (k + 1) % 4) {
+                    play((k + 3) % 4);
+                } else if (clock == 4 && history[3] == (k + 3) % 4) {
+                    play((k + 1) % 4);
+                } else if (clock == 4 && history[3] == (k + 1) % 4 + 4) {
+                    play((k + 3) % 4 + 4);
+                } else if (clock == 4 && history[3] == (k) % 4 + 4) {
+                    play((k + 2) % 4 + 4);
+                } else if (clock == 4 && history[3] == (k + 2) % 4 + 4) {
+                    play((k) % 4 + 4);
+                } else if (clock == 4 && history[3] == (k + 3) % 4 + 4) {
+                    play((k + 1) % 4 + 4);
+                }
+                if (history[4] == (k + 3) % 4) {
+                    if (clock == 6 && history[5] != (k) % 4 + 4 && history[5] != (k + 3) % 4 + 4) {
                         int i = randint() % 2;
                         switch (i) {
                             case 0:
-                                play(3);
+                                play((k) % 4 + 4);
                                 break;
                             case 1:
-                                play(7);
+                                play((k + 3) % 4 + 4);
                                 break;
                         }
-                    } else if (clock == 2 && (history[1] == 2 || history[1] == 3)) {
-                        play(7);
-                    } else if (clock == 2 && (history[1] == 4 || history[1] == 7)) {
-                        play(3);
+                    } else if (clock == 6 && history[5] == (k) % 4 + 4) {
+                        play((k + 3) % 4 + 4);
+                    } else if (clock == 6) {
+                        play((k) % 4 + 4);
                     }
-                    if (history[2] == 3) {
-                        if (clock == 4 && history[3] != 2) {
-                            play(2);
-                        } else {
-                            if (clock == 4 && history[1] == 8) {
-                                int i = randint() % 2;
-                                switch (i) {
-                                    case 0:
-                                        play(7);
-                                        break;
-                                    case 1:
-                                        play(9);
-                                        break;
-                                }
-                            } else {
-                                if (clock == 4 && (history[1] == 9 || history[1] == 6)) {
-                                    play(7);
-                                } else if (clock == 4 && (history[1] == 7 || history[1] == 4)) {
-                                    play(9);
-                                }
-                            }
-                        }
-                        if (history[4] == 7) {
-                            if (clock == 6 && history[5] != 4 && history[5] != 5) {
-                                int i = randint() % 2;
-                                switch (i) {
-                                    case 0:
-                                        play(4);
-                                        break;
-                                    case 1:
-                                        play(5);
-                                        break;
-                                }
-                            } else {
-                                if (clock == 6 && history[5] == 4) {
-                                    play(5);
-                                } else if (clock == 6) {
-                                    play(4);
-                                }
-                            }
-                        } else if (history[4] == 9) {
-                            if (clock == 6 && history[5] != 6 && history[5] != 5) {
-                                int i = randint() % 2;
-                                switch (i) {
-                                    case 0:
-                                        play(6);
-                                        break;
-                                    case 1:
-                                        play(5);
-                                        break;
-                                }
-                            } else {
-                                if (clock == 6 && history[5] == 6) {
-                                    play(5);
-                                } else if (clock == 6) {
-                                    play(6);
-                                }
-                            }
-                        }
-                    } else if (history[2] == 7) {
-                        if (clock == 4 && history[3] != 4) {
-                            play(4);
-                        } else {
-                            if (clock == 4 && history[1] == 6) {
-                                int i = randint() % 2;
-                                switch (i) {
-                                    case 0:
-                                        play(3);
-                                        break;
-                                    case 1:
-                                        play(9);
-                                        break;
-                                }
-                            } else {
-                                if (clock == 4 && (history[1] == 9 || history[1] == 8)) {
-                                    play(3);
-                                } else if (clock == 4 && (history[1] == 2 || history[1] == 3)) {
-                                    play(9);
-                                }
-                            }
-                        }
-                        if (history[4] == 3) {
-                            if (clock == 6 && history[5] != 2 && history[5] != 5) {
-                                int i = randint() % 2;
-                                switch (i) {
-                                    case 0:
-                                        play(2);
-                                        break;
-                                    case 1:
-                                        play(5);
-                                        break;
-                                }
-                            } else {
-                                if (clock == 6 && history[5] == 2) {
-                                    play(5);
-                                } else if (clock == 6) {
-                                    play(2);
-                                }
-                            }
-                        } else if (history[4] == 9) {
-                            if (clock == 6 && history[5] != 8 && history[5] != 5) {
-                                int i = randint() % 2;
-                                switch (i) {
-                                    case 0:
-                                        play(8);
-                                        break;
-                                    case 1:
-                                        play(5);
-                                        break;
-                                }
-                            } else {
-                                if (clock == 6 && history[5] == 8) {
-                                    play(5);
-                                } else if (clock == 6) {
-                                    play(8);
-                                }
-                            }
-                        }
-                    }
-                }
-            } else if (history[0] == 3) {
-                if (history[1] == 5) {
-                    if (clock == 2) {
-                        int i = randint() % 3;
-                        switch (i) {
-                            case 0:
-                                play(8);
-                                break;
-                            case 1:
-                                play(4);
-                                break;
-                            case 2:
-                                play(7);
-                                break;
-                        }
-                    }
-                    if (history[2]==7){
-                        if (clock==4&&history[3]==9){
-                            play(1);
-                        } else if (clock==4&&history[3]==1) {
-                            play(9);
-                        } else if (clock==4&&history[3]==6) {
-                            play(4);
-                        } else if (clock==4&&history[3]==2) {
-                            play(8);
-                        } else if (clock==4&&history[3]==8) {
-                            play(2);
-                        } else if (clock==4&&history[3]==4) {
-                            play(6);
-                        }
-                        if (history[4]==1){
-                            if (clock==6&&history[5]!=2&&history[5]!=4){
-                                int i = randint() % 2;
-                                switch (i) {
-                                    case 0:
-                                        play(2);
-                                        break;
-                                    case 1:
-                                        play(4);
-                                        break;
-                                }
-                            } else if (clock==6&&history[5]==2) {
-                                play(4);
-                            } else if (clock==6) {
-                                play(2);
-                            }
-                        } else if (history[4]==9) {
-                            if (clock==6&&history[5]!=6&&history[5]!=8){
-                                int i = randint() % 2;
-                                switch (i) {
-                                    case 0:
-                                        play(6);
-                                        break;
-                                    case 1:
-                                        play(8);
-                                        break;
-                                }
-                            } else if (clock==6&&history[5]==6) {
-                                play(8);
-                            } else if (clock==6) {
-                                play(6);
-                            }
-                        } else if (history[4]==6) {
-                            if (clock==6&&history[5]!=9){
-                                play(9);
-                            } else if (clock==6){
-                                play(1);
-                            }
-                            if (history[6]==1){
-                                if (clock==8&&history[7]!=2){
-                                    play(2);
-                                } else if (clock==8) {
-                                    play(8);
-                                }
-                            }
-                        } else if (history[4]==2) {
-                            if (clock==6&&history[5]!=1){
-                                play(1);
-                            } else if (clock==6){
-                                play(9);
-                            }
-                            if (history[6]==9){
-                                if (clock==8&&history[7]!=6){
-                                    play(6);
-                                } else if (clock==8) {
-                                    play(4);
-                                }
-                            }
-                        } else if (history[4]==8) {
-                            if (clock==6&&history[5]!=9){
-                                play(9);
-                            } else if (clock==6){
-                                play(1);
-                            }
-                            if (history[6]==1){
-                                if (clock==8&&history[7]!=6){
-                                    play(6);
-                                } else if (clock==8) {
-                                    play(4);
-                                }
-                            }
-                        } else if (history[4]==4) {
-                            if (clock==6&&history[5]!=1){
-                                play(1);
-                            } else if (clock==6){
-                                play(9);
-                            }
-                            if (history[6]==1){
-                                if (clock==8&&history[7]!=8){
-                                    play(8);
-                                } else if (clock==8) {
-                                    play(2);
-                                }
-                            }
-                        }
-                    } else if (history[2] == 4) {
-                        if (clock==4&&(history[3]==6||history[3]==9||history[3]==7)){
-                            play(1);
-                        } else if (clock == 4 && history[3] == 8) {
-                            play(2);
-                        } else if (clock == 4 && history[3] == 2) {
-                            play(8);
-                        } else if (clock == 4 && history[3] == 1) {
-                            play(9);
-                        }
-                        if (history[4]==1){
-                            if (history[3]==7){
-                                if (clock==6&&history[5]!=2){
-                                    play(2);
-                                } else if (clock == 6) {
-                                    play(8);
-                                }
-                                if (history[6]==8){
-                                    if (clock==8&&history[7]!=9){
-                                        play(9);
-                                    } else if (clock==8) {
-                                        play(6);
-                                    }
-                                }
-                            }else {
-                                if (clock==6&&history[5]!=2&&history[5]!=7){
-                                    int i = randint() % 2;
-                                    switch (i) {
-                                        case 0:
-                                            play(2);
-                                            break;
-                                        case 1:
-                                            play(7);
-                                            break;
-                                    }
-                                } else if (clock == 6 && history[5] == 2) {
-                                    play(7);
-                                } else if (clock == 6) {
-                                    play(2);
-                                }
-                            }
-                        } else if (history[4] == 2) {
-                            if (clock==6&&history[5]!=1){
-                                play(1);
-                            } else if (clock == 6) {
-                                play(9);
-                            }
-                            if (history[6]==9){
-                                if (clock==8&&history[7]!=6){
-                                    play(6);
-                                } else if (clock==8) {
-                                    play(7);
-                                }
-                            }
-                        } else if (history[4] == 8) {
-                            if (clock==6&&(history[5]==1||history[5] == 7)){
-                                play(9);
-                            } else if (clock == 6 && history[5] == 9) {
-                                play(1);
-                            } else if (clock == 6 && history[5] == 6) {
-                                play(7);
-                            }
-                            if (history[6]==9){
-                                if (clock==8&&history[7]!=6){
-                                    play(6);
-                                } else if (clock==8&&history[5]==1) {
-                                    play(7);
-                                } else if (clock==8&&history[5]==7) {
-                                    play(1);
-                                }
-                            } else if (history[6] == 1) {
-                                if (clock==8&&history[7]!=7){
-                                    play(7);
-                                } else if (clock==8) {
-                                    play(6);
-                                }
-                            }
-                        } else if (history[4] == 9) {
-                            if (clock==6&&history[5]!=6){
-                                play(6);
-                            } else if (clock == 6) {
-                                play(7);
-                            }
-                            if (history[6]==7){
-                                if (clock==8&&history[7]!=8){
-                                    play(8);
-                                } else if (clock==8) {
-                                    play(2);
-                                }
-                            }
-                        }
-                    } else if (history[2] == 8) {
-                        if (clock==4&&(history[3]==2||history[3]==1||history[3]==7)){
-                            play(9);
-                        } else if (clock == 4 && history[3] == 4) {
-                            play(6);
-                        } else if (clock == 4 && history[3] == 6) {
-                            play(2);
-                        } else if (clock == 4 && history[3] == 9) {
-                            play(1);
-                        }
-                        if (history[4]==9){
-                            if (history[3]==7){
-                                if (clock==6&&history[5]!=6){
-                                    play(6);
-                                } else if (clock == 6) {
-                                    play(4);
-                                }
-                                if (history[6]==4){
-                                    if (clock==8&&history[7]!=1){
-                                        play(1);
-                                    } else if (clock==8) {
-                                        play(2);
-                                    }
-                                }
-                            }else {
-                                if (clock==6&&history[5]!=6&&history[5]!=7){
-                                    int i = randint() % 2;
-                                    switch (i) {
-                                        case 0:
-                                            play(6);
-                                            break;
-                                        case 1:
-                                            play(7);
-                                            break;
-                                    }
-                                } else if (clock == 6 && history[5] == 6) {
-                                    play(7);
-                                } else if (clock == 6) {
-                                    play(6);
-                                }
-                            }
-                        } else if (history[4] == 6) {
-                            if (clock==6&&history[5]!=9){
-                                play(9);
-                            } else if (clock == 6) {
-                                play(1);
-                            }
-                            if (history[6]==1){
-                                if (clock==8&&history[7]!=2){
-                                    play(2);
-                                } else if (clock==8) {
-                                    play(7);
-                                }
-                            }
-                        } else if (history[4] == 4) {
-                            if (clock==6&&(history[5]==9||history[5] == 7)){
-                                play(1);
-                            } else if (clock == 6 && history[5] == 1) {
-                                play(9);
-                            } else if (clock == 6 && history[5] == 2) {
-                                play(7);
-                            }
-                            if (history[6]==1){
-                                if (clock==8&&history[7]!=2){
-                                    play(2);
-                                } else if (clock==8&&history[5]==9) {
-                                    play(7);
-                                } else if (clock==8&&history[5]==7) {
-                                    play(9);
-                                }
-                            } else if (history[6] == 9) {
-                                if (clock==8&&history[7]!=7){
-                                    play(7);
-                                } else if (clock==8) {
-                                    play(2);
-                                }
-                            }
-                        } else if (history[4] == 1) {
-                            if (clock==6&&history[5]!=2){
-                                play(2);
-                            } else if (clock == 6) {
-                                play(7);
-                            }
-                            if (history[6]==7){
-                                if (clock==8&&history[7]!=4){
-                                    play(4);
-                                } else if (clock==8) {
-                                    play(6);
-                                }
-                            }
-                        }
-                    }//////////////////////////////////////////////
-                } else {
-                    if (clock == 2 && (history[1] == 6 || history[1] == 8 || history[1] == 9)) {
+                } else if (history[4] == (k + 1) % 4) {
+                    if (clock == 6 && history[5] != (k + 1) % 4 + 4 && history[5] != (k + 2) % 4 + 4) {
                         int i = randint() % 2;
                         switch (i) {
                             case 0:
-                                play(3);
+                                play((k + 1) % 4 + 4);
                                 break;
                             case 1:
-                                play(7);
+                                play((k + 2) % 4 + 4);
                                 break;
                         }
-                    } else if (clock == 2 && (history[1] == 2 || history[1] == 3)) {
-                        play(7);
-                    } else if (clock == 2 && (history[1] == 4 || history[1] == 7)) {
-                        play(3);
+                    } else if (clock == 6 && history[5] == (k + 1) % 4 + 4) {
+                        play((k + 2) % 4 + 4);
+                    } else if (clock == 6) {
+                        play((k + 1) % 4 + 4);
                     }
-                    if (history[2] == 3) {
-                        if (clock == 4 && history[3] != 2) {
-                            play(2);
-                        } else {
-                            if (clock == 4 && history[1] == 8) {
-                                int i = randint() % 2;
-                                switch (i) {
-                                    case 0:
-                                        play(7);
-                                        break;
-                                    case 1:
-                                        play(9);
-                                        break;
-                                }
-                            } else {
-                                if (clock == 4 && (history[1] == 9 || history[1] == 6)) {
-                                    play(7);
-                                } else if (clock == 4 && (history[1] == 7 || history[1] == 4)) {
-                                    play(9);
-                                }
-                            }
+                } else if (history[4] == (k + 1) % 4 + 4) {
+                    if (clock == 6 && history[5] != (k + 1) % 4) {
+                        play((k + 1) % 4);
+                    } else if (clock == 6) {
+                        play((k + 3) % 4);
+                    }
+                    if (history[6] == (k + 3) % 4) {
+                        if (clock == 8 && history[7] != (k) % 4 + 4) {
+                            play((k) % 4 + 4);
+                        } else if (clock == 8) {
+                            play((k + 2) % 4 + 4);
                         }
-                        if (history[4] == 7) {
-                            if (clock == 6 && history[5] != 4 && history[5] != 5) {
-                                int i = randint() % 2;
-                                switch (i) {
-                                    case 0:
-                                        play(4);
-                                        break;
-                                    case 1:
-                                        play(5);
-                                        break;
-                                }
-                            } else {
-                                if (clock == 6 && history[5] == 4) {
-                                    play(5);
-                                } else if (clock == 6 && history[5] == 5) {
-                                    play(4);
-                                }
-                            }
-                        } else if (history[4] == 9) {
-                            if (clock == 6 && history[5] != 6 && history[5] != 5) {
-                                int i = randint() % 2;
-                                switch (i) {
-                                    case 0:
-                                        play(6);
-                                        break;
-                                    case 1:
-                                        play(5);
-                                        break;
-                                }
-                            } else {
-                                if (clock == 6 && history[5] == 6) {
-                                    play(5);
-                                } else if (clock == 6 && history[5] == 5) {
-                                    play(6);
-                                }
-                            }
+                    }
+                } else if (history[4] == (k) % 4 + 4) {
+                    if (clock == 6 && history[5] != (k + 3) % 4) {
+                        play((k + 3) % 4);
+                    } else if (clock == 6) {
+                        play((k + 1) % 4);
+                    }
+                    if (history[6] == (k + 1) % 4) {
+                        if (clock == 8 && history[7] != (k + 1) % 4 + 4) {
+                            play((k + 1) % 4 + 4);
+                        } else if (clock == 8) {
+                            play((k + 3) % 4 + 4);
                         }
-                    } else if (history[2] == 7) {
-                        if (clock == 4 && history[3] != 4) {
-                            play(4);
-                        } else {
-                            if (clock == 4 && history[1] == 6) {
-                                int i = randint() % 2;
-                                switch (i) {
-                                    case 0:
-                                        play(3);
-                                        break;
-                                    case 1:
-                                        play(9);
-                                        break;
-                                }
-                            } else {
-                                if (clock == 4 && (history[1] == 9 || history[1] == 8)) {
-                                    play(3);
-                                } else if (clock == 4 && (history[1] == 2 || history[1] == 3)) {
-                                    play(9);
-                                }
-                            }
+                    }
+                } else if (history[4] == (k + 2) % 4 + 4) {
+                    if (clock == 6 && history[5] != (k + 1) % 4) {
+                        play((k + 1) % 4);
+                    } else if (clock == 6) {
+                        play((k + 3) % 4);
+                    }
+                    if (history[6] == (k + 3) % 4) {
+                        if (clock == 8 && history[7] != (k + 1) % 4 + 4) {
+                            play((k + 1) % 4 + 4);
+                        } else if (clock == 8) {
+                            play((k + 3) % 4 + 4);
                         }
-                        if (history[4] == 3) {
-                            if (clock == 6 && history[5] != 2 && history[5] != 5) {
-                                int i = randint() % 2;
-                                switch (i) {
-                                    case 0:
-                                        play(2);
-                                        break;
-                                    case 1:
-                                        play(5);
-                                        break;
-                                }
-                            } else {
-                                if (clock == 6 && history[5] == 2) {
-                                    play(5);
-                                } else if (clock == 6 && history[5] == 5) {
-                                    play(2);
-                                }
-                            }
-                        } else if (history[4] == 9) {
-                            if (clock == 6 && history[5] != 8 && history[5] != 5) {
-                                int i = randint() % 2;
-                                switch (i) {
-                                    case 0:
-                                        play(8);
-                                        break;
-                                    case 1:
-                                        play(5);
-                                        break;
-                                }
-                            } else {
-                                if (clock == 6 && history[5] == 8) {
-                                    play(5);
-                                } else if (clock == 6 && history[5] == 5) {
-                                    play(8);
-                                }
-                            }
+                    }
+                } else if (history[4] == (k + 3) % 4 + 4) {
+                    if (clock == 6 && history[5] != (k + 3) % 4) {
+                        play((k + 3) % 4);
+                    } else if (clock == 6) {
+                        play((k + 1) % 4);
+                    }
+                    if (history[6] == (k + 3) % 4) {
+                        if (clock == 8 && history[7] != (k + 2) % 4 + 4) {
+                            play((k + 2) % 4 + 4);
+                        } else if (clock == 8) {
+                            play((k) % 4 + 4);
                         }
                     }
                 }
-            } else if (history[0] == 7) {
-
-            } else if (history[0] == 9) {
-
+            } else if (history[2] == (k + 3) % 4 + 4) {
+                if (clock == 4 && (history[3] == (k + 1) % 4 + 4 || history[3] == (k + 1) % 4 || history[3] == (k + 2) % 4)) {
+                    play((k + 3) % 4);
+                } else if (clock == 4 && history[3] == (k + 2) % 4 + 4) {
+                    play((k) % 4 + 4);
+                } else if (clock == 4 && history[3] == (k) % 4 + 4) {
+                    play((k + 2) % 4 + 4);
+                } else if (clock == 4 && history[3] == (k + 3) % 4) {
+                    play((k + 1) % 4);
+                }
+                if (history[4] == (k + 3) % 4) {
+                    if (history[3] == (k + 2) % 4) {
+                        if (clock == 6 && history[5] != (k) % 4 + 4) {
+                            play((k) % 4 + 4);
+                        } else if (clock == 6) {
+                            play((k + 2) % 4 + 4);
+                        }
+                        if (history[6] == (k + 2) % 4 + 4) {
+                            if (clock == 8 && history[7] != (k + 1) % 4) {
+                                play((k + 1) % 4);
+                            } else if (clock == 8) {
+                                play((k + 1) % 4 + 4);
+                            }
+                        }
+                    } else {
+                        if (clock == 6 && history[5] != (k) % 4 + 4 && history[5] != (k + 2) % 4) {
+                            int i = randint() % 2;
+                            switch (i) {
+                                case 0:
+                                    play((k) % 4 + 4);
+                                    break;
+                                case 1:
+                                    play((k + 2) % 4);
+                                    break;
+                            }
+                        } else if (clock == 6 && history[5] == (k) % 4 + 4) {
+                            play((k + 2) % 4);
+                        } else if (clock == 6) {
+                            play((k) % 4 + 4);
+                        }
+                    }
+                } else if (history[4] == (k) % 4 + 4) {
+                    if (clock == 6 && history[5] != (k + 3) % 4) {
+                        play((k + 3) % 4);
+                    } else if (clock == 6) {
+                        play((k + 1) % 4);
+                    }
+                    if (history[6] == (k + 1) % 4) {
+                        if (clock == 8 && history[7] != (k + 1) % 4 + 4) {
+                            play((k + 1) % 4 + 4);
+                        } else if (clock == 8) {
+                            play((k + 2) % 4);
+                        }
+                    }
+                } else if (history[4] == (k + 2) % 4 + 4) {
+                    if (clock == 6 && (history[5] == (k + 3) % 4 || history[5] == (k + 2) % 4)) {
+                        play((k + 1) % 4);
+                    } else if (clock == 6 && history[5] == (k + 1) % 4) {
+                        play((k + 3) % 4);
+                    } else if (clock == 6 && history[5] == (k + 1) % 4 + 4) {
+                        play((k + 2) % 4);
+                    }
+                    if (history[6] == (k + 1) % 4) {
+                        if (clock == 8 && history[7] != (k + 1) % 4 + 4) {
+                            play((k + 1) % 4 + 4);
+                        } else if (clock == 8 && history[5] == (k + 3) % 4) {
+                            play((k + 2) % 4);
+                        } else if (clock == 8 && history[5] == (k + 2) % 4) {
+                            play((k + 3) % 4);
+                        }
+                    } else if (history[6] == (k + 3) % 4) {
+                        if (clock == 8 && history[7] != (k + 2) % 4) {
+                            play((k + 2) % 4);
+                        } else if (clock == 8) {
+                            play((k + 1) % 4 + 4);
+                        }
+                    }
+                } else if (history[4] == (k + 1) % 4) {
+                    if (clock == 6 && history[5] != (k + 1) % 4 + 4) {
+                        play((k + 1) % 4 + 4);
+                    } else if (clock == 6) {
+                        play((k + 2) % 4);
+                    }
+                    if (history[6] == (k + 2) % 4) {
+                        if (clock == 8 && history[7] != (k + 2) % 4 + 4) {
+                            play((k + 2) % 4 + 4);
+                        } else if (clock == 8) {
+                            play((k) % 4 + 4);
+                        }
+                    }
+                }
+            } else if (history[2] == (k + 2) % 4 + 4) {
+                if (clock == 4 && (history[3] == (k) % 4 + 4 || history[3] == (k + 3) % 4 || history[3] == (k + 2) % 4)) {
+                    play((k + 1) % 4);
+                } else if (clock == 4 && history[3] == (k + 3) % 4 + 4) {
+                    play((k + 1) % 4 + 4);
+                } else if (clock == 4 && history[3] == (k + 1) % 4 + 4) {
+                    play((k + 3) % 4 + 4);
+                } else if (clock == 4 && history[3] == (k + 1) % 4) {
+                    play((k + 3) % 4);
+                }
+                if (history[4] == (k + 1) % 4) {
+                    if (history[3] == (k + 2) % 4) {
+                        if (clock == 6 && history[5] != (k + 1) % 4 + 4) {
+                            play((k + 1) % 4 + 4);
+                        } else if (clock == 6) {
+                            play((k + 3) % 4 + 4);
+                        }
+                        if (history[6] == (k + 3) % 4 + 4) {
+                            if (clock == 8 && history[7] != (k + 3) % 4) {
+                                play((k + 3) % 4);
+                            } else if (clock == 8) {
+                                play((k) % 4 + 4);
+                            }
+                        }
+                    } else {
+                        if (clock == 6 && history[5] != (k + 1) % 4 + 4 && history[5] != (k + 2) % 4) {
+                            int i = randint() % 2;
+                            switch (i) {
+                                case 0:
+                                    play((k + 1) % 4 + 4);
+                                    break;
+                                case 1:
+                                    play((k + 2) % 4);
+                                    break;
+                            }
+                        } else if (clock == 6 && history[5] == (k + 1) % 4 + 4) {
+                            play((k + 2) % 4);
+                        } else if (clock == 6) {
+                            play((k + 1) % 4 + 4);
+                        }
+                    }
+                } else if (history[4] == (k + 1) % 4 + 4) {
+                    if (clock == 6 && history[5] != (k + 1) % 4) {
+                        play((k + 1) % 4);
+                    } else if (clock == 6) {
+                        play((k + 3) % 4);
+                    }
+                    if (history[6] == (k + 3) % 4) {
+                        if (clock == 8 && history[7] != (k) % 4 + 4) {
+                            play((k) % 4 + 4);
+                        } else if (clock == 8) {
+                            play((k + 2) % 4);
+                        }
+                    }
+                } else if (history[4] == (k + 3) % 4 + 4) {
+                    if (clock == 6 && (history[5] == (k + 1) % 4 || history[5] == (k + 2) % 4)) {
+                        play((k + 3) % 4);
+                    } else if (clock == 6 && history[5] == (k + 3) % 4) {
+                        play((k + 1) % 4);
+                    } else if (clock == 6 && history[5] == (k) % 4 + 4) {
+                        play((k + 2) % 4);
+                    }
+                    if (history[6] == (k + 3) % 4) {
+                        if (clock == 8 && history[7] != (k) % 4 + 4) {
+                            play((k) % 4 + 4);
+                        } else if (clock == 8 && history[5] == (k + 1) % 4) {
+                            play((k + 2) % 4);
+                        } else if (clock == 8 && history[5] == (k + 2) % 4) {
+                            play((k + 1) % 4);
+                        }
+                    } else if (history[6] == (k + 1) % 4) {
+                        if (clock == 8 && history[7] != (k + 2) % 4) {
+                            play((k + 2) % 4);
+                        } else if (clock == 8) {
+                            play((k) % 4 + 4);
+                        }
+                    }
+                } else if (history[4] == (k + 3) % 4) {
+                    if (clock == 6 && history[5] != (k) % 4 + 4) {
+                        play((k) % 4 + 4);
+                    } else if (clock == 6) {
+                        play((k + 2) % 4);
+                    }
+                    if (history[6] == (k + 2) % 4) {
+                        if (clock == 8 && history[7] != (k + 3) % 4 + 4) {
+                            play((k + 3) % 4 + 4);
+                        } else if (clock == 8) {
+                            play((k + 1) % 4 + 4);
+                        }
+                    }
+                }
             }
         } else {
+            if (clock == 2 && (history[1] == (k + 2) % 4 + 4 || history[1] == (k + 3) % 4 + 4 || history[1] == (k + 2) % 4)) {
+                int i = randint() % 2;
+                switch (i) {
+                    case 0:
+                        play((k + 1) % 4);
+                        break;
+                    case 1:
+                        play((k + 3) % 4);
+                        break;
+                }
+            } else if (clock == 2 && (history[1] == (k + 1) % 4 + 4 || history[1] == (k + 1) % 4)) {
+                play((k + 3) % 4);
+            } else if (clock == 2 && (history[1] == (k) % 4 + 4 || history[1] == (k + 3) % 4)) {
+                play((k + 1) % 4);
+            }
+            if (history[2] == (k + 1) % 4) {
+                if (clock == 4 && history[3] != (k + 1) % 4 + 4) {
+                    play((k + 1) % 4 + 4);
+                } else {
+                    if (clock == 4 && history[1] == (k + 3) % 4 + 4) {
+                        int i = randint() % 2;
+                        switch (i) {
+                            case 0:
+                                play((k + 3) % 4);
+                                break;
+                            case 1:
+                                play((k + 2) % 4);
+                                break;
+                        }
+                    } else {
+                        if (clock == 4 && (history[1] == (k + 2) % 4 || history[1] == (k + 2) % 4 + 4)) {
+                            play((k + 3) % 4);
+                        } else if (clock == 4 && (history[1] == (k + 3) % 4 || history[1] == (k) % 4 + 4)) {
+                            play((k + 2) % 4);
+                        }
+                    }
+                }
+                if (history[4] == (k + 3) % 4) {
+                    if (clock == 6 && history[5] != (k) % 4 + 4 && history[5] != 8) {
+                        int i = randint() % 2;
+                        switch (i) {
+                            case 0:
+                                play((k) % 4 + 4);
+                                break;
+                            case 1:
+                                play(8);
+                                break;
+                        }
+                    } else {
+                        if (clock == 6 && history[5] == (k) % 4 + 4) {
+                            play(8);
+                        } else if (clock == 6) {
+                            play((k) % 4 + 4);
+                        }
+                    }
+                } else if (history[4] == (k + 2) % 4) {
+                    if (clock == 6 && history[5] != (k + 2) % 4 + 4 && history[5] != 8) {
+                        int i = randint() % 2;
+                        switch (i) {
+                            case 0:
+                                play((k + 2) % 4 + 4);
+                                break;
+                            case 1:
+                                play(8);
+                                break;
+                        }
+                    } else {
+                        if (clock == 6 && history[5] == (k + 2) % 4 + 4) {
+                            play(8);
+                        } else if (clock == 6) {
+                            play((k + 2) % 4 + 4);
+                        }
+                    }
+                }
+            } else if (history[2] == (k + 3) % 4) {
+                if (clock == 4 && history[3] != (k) % 4 + 4) {
+                    play((k) % 4 + 4);
+                } else {
+                    if (clock == 4 && history[1] == (k + 2) % 4 + 4) {
+                        int i = randint() % 2;
+                        switch (i) {
+                            case 0:
+                                play((k + 1) % 4);
+                                break;
+                            case 1:
+                                play((k + 2) % 4);
+                                break;
+                        }
+                    } else {
+                        if (clock == 4 && (history[1] == (k + 2) % 4 || history[1] == (k + 3) % 4 + 4)) {
+                            play((k + 1) % 4);
+                        } else if (clock == 4 && (history[1] == (k + 1) % 4 + 4 || history[1] == (k + 1) % 4)) {
+                            play((k + 2) % 4);
+                        }
+                    }
+                }
+                if (history[4] == (k + 1) % 4) {
+                    if (clock == 6 && history[5] != (k + 1) % 4 + 4 && history[5] != 8) {
+                        int i = randint() % 2;
+                        switch (i) {
+                            case 0:
+                                play((k + 1) % 4 + 4);
+                                break;
+                            case 1:
+                                play(8);
+                                break;
+                        }
+                    } else {
+                        if (clock == 6 && history[5] == (k + 1) % 4 + 4) {
+                            play(8);
+                        } else if (clock == 6) {
+                            play((k + 1) % 4 + 4);
+                        }
+                    }
+                } else if (history[4] == (k + 2) % 4) {
+                    if (clock == 6 && history[5] != (k + 3) % 4 + 4 && history[5] != 8) {
+                        int i = randint() % 2;
+                        switch (i) {
+                            case 0:
+                                play((k + 3) % 4 + 4);
+                                break;
+                            case 1:
+                                play(8);
+                                break;
+                        }
+                    } else {
+                        if (clock == 6 && history[5] == (k + 3) % 4 + 4) {
+                            play(8);
+                        } else if (clock == 6) {
+                            play((k + 3) % 4 + 4);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public void hardmodesecond(int k) {
+        if (k >= 0 && k <= 3) {
+            if (clock == 1) {
+                play(8);
+            }
+            if (clock == 3 && (history[2] == (k + 1) % 4 + 4 || history[2] == (k + 2) % 4 + 4)) {
+                play((k + 1) % 4);
+            } else if (clock == 3 && (history[2] == k % 4 + 4 || history[2] == (k + 3) % 4 + 4)) {
+                play((k + 3) % 4);
+            } else if (clock == 3 && history[2] == (k + 2) % 4) {
+
+
+                ///////////////////////////////
+
+
+
+
+            } else if (clock == 3 && history[2] == (k + 3) % 4) {
+                play(k % 4 + 4);
+            } else if (clock == 3 && history[2] == (k + 1) % 4) {
+                play((k + 1) % 4 + 4);
+            }
+            if (history[3] == (k + 3) % 4) {
+                if (clock == 5 && history[4] != (k + 1) % 4) {
+                    play((k + 1) % 4);
+                } else if (clock == 5 && history[4] == (k + 1) % 4) {
+                    play((k + 1) % 4 + 4);
+                }
+                if (clock == 7 && history[2] != (k + 3) % 4 + 4 && history[6] != (k + 3) % 4 + 4) {
+                    play((k + 3) % 4 + 4);
+                } else if (clock == 7 && history[2] == (k + 3) % 4 + 4 && history[6] == k % 4 + 4) {
+                    int i = randint() % 2;
+                    switch (i) {
+                        case 0:
+                            play((k + 2) % 4 + 4);
+                            break;
+                        case 1:
+                            play((k + 2) % 4);
+                            break;
+                    }
+                } else if (clock == 7 && history[2] == (k + 3) % 4 + 4 && history[6] == (k + 2) % 4 + 4) {
+                    int i = randint() % 2;
+                    switch (i) {
+                        case 0:
+                            play(k % 4 + 4);
+                            break;
+                        case 1:
+                            play((k + 2) % 4);
+                            break;
+                    }
+                } else if (clock == 7 && history[2] == (k + 3) % 4 + 4 && history[6] == (k + 2) % 4) {
+                    int i = randint() % 2;
+                    switch (i) {
+                        case 0:
+                            play((k + 2) % 4 + 4);
+                            break;
+                        case 1:
+                            play(k % 4 + 4);
+                            break;
+                    }
+                } else if (clock == 7 && history[2] != (k + 3) % 4 + 4 && history[6] == (k + 3) % 4 + 4) {
+                    int i = randint() % 2;
+                    switch (i) {
+                        case 0:
+                            play((k + 2) % 4 + 4);
+                            break;
+                        case 1:
+                            play((k + 2) % 4);
+                            break;
+                    }
+                }
+            } else if (history[3] == (k + 1) % 4) {
+
+            } else if (history[3] == k % 4 + 4) {
+
+            } else if (history[3] == (k + 1) % 4 + 4) {
+
+            }
+        } else if (k >= 4 && k <= 7) {
+
+        } else if (k == 8) {
 
         }
     }
@@ -927,34 +564,34 @@ public class ManVSAIActivity extends AppCompatActivity {
     public void man_vs_ai_place(View v) {
         String s = set(clock);
         boolean isable = false;
-        if (v.getId() == R.id.man_vs_ai_place_1) {
+        if (v.getId() == R.id.man_vs_ai_place_0) {
             if (place[0][0] == 0) {
                 if (s.equals("O")) {
                     place[0][0] = 1;
                 } else {
                     place[0][0] = -1;
                 }
-                history[clock] = 1;
+                history[clock] = 0;
                 isable = true;
             }
-        } else if (v.getId() == R.id.man_vs_ai_place_2) {
+        } else if (v.getId() == R.id.man_vs_ai_place_5) {
             if (place[0][1] == 0) {
                 if (s.equals("O")) {
                     place[0][1] = 1;
                 } else {
                     place[0][1] = -1;
                 }
-                history[clock] = 2;
+                history[clock] = 5;
                 isable = true;
             }
-        } else if (v.getId() == R.id.man_vs_ai_place_3) {
+        } else if (v.getId() == R.id.man_vs_ai_place_1) {
             if (place[0][2] == 0) {
                 if (s.equals("O")) {
                     place[0][2] = 1;
                 } else {
                     place[0][2] = -1;
                 }
-                history[clock] = 3;
+                history[clock] = 1;
                 isable = true;
             }
         } else if (v.getId() == R.id.man_vs_ai_place_4) {
@@ -967,14 +604,14 @@ public class ManVSAIActivity extends AppCompatActivity {
                 history[clock] = 4;
                 isable = true;
             }
-        } else if (v.getId() == R.id.man_vs_ai_place_5) {
+        } else if (v.getId() == R.id.man_vs_ai_place_8) {
             if (place[1][1] == 0) {
                 if (s.equals("O")) {
                     place[1][1] = 1;
                 } else {
                     place[1][1] = -1;
                 }
-                history[clock] = 5;
+                history[clock] = 8;
                 isable = true;
             }
         } else if (v.getId() == R.id.man_vs_ai_place_6) {
@@ -987,34 +624,34 @@ public class ManVSAIActivity extends AppCompatActivity {
                 history[clock] = 6;
                 isable = true;
             }
-        } else if (v.getId() == R.id.man_vs_ai_place_7) {
+        } else if (v.getId() == R.id.man_vs_ai_place_3) {
             if (place[2][0] == 0) {
                 if (s.equals("O")) {
                     place[2][0] = 1;
                 } else {
                     place[2][0] = -1;
                 }
-                history[clock] = 7;
+                history[clock] = 3;
                 isable = true;
             }
-        } else if (v.getId() == R.id.man_vs_ai_place_8) {
+        } else if (v.getId() == R.id.man_vs_ai_place_7) {
             if (place[2][1] == 0) {
                 if (s.equals("O")) {
                     place[2][1] = 1;
                 } else {
                     place[2][1] = -1;
                 }
-                history[clock] = 8;
+                history[clock] = 7;
                 isable = true;
             }
-        } else if (v.getId() == R.id.man_vs_ai_place_9) {
+        } else if (v.getId() == R.id.man_vs_ai_place_2) {
             if (place[2][2] == 0) {
                 if (s.equals("O")) {
                     place[2][2] = 1;
                 } else {
                     place[2][2] = -1;
                 }
-                history[clock] = 9;
+                history[clock] = 2;
                 isable = true;
             }
         }
@@ -1037,6 +674,9 @@ public class ManVSAIActivity extends AppCompatActivity {
 
     public void play(int i) {
         switch (i) {
+            case 0:
+                man_vs_ai_place(findViewById(R.id.man_vs_ai_place_0));
+                break;
             case 1:
                 man_vs_ai_place(findViewById(R.id.man_vs_ai_place_1));
                 break;
@@ -1060,9 +700,6 @@ public class ManVSAIActivity extends AppCompatActivity {
                 break;
             case 8:
                 man_vs_ai_place(findViewById(R.id.man_vs_ai_place_8));
-                break;
-            case 9:
-                man_vs_ai_place(findViewById(R.id.man_vs_ai_place_9));
                 break;
         }
     }
