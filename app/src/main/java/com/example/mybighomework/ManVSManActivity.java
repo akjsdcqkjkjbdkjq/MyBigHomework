@@ -1,7 +1,6 @@
 package com.example.mybighomework;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -25,7 +24,7 @@ public class ManVSManActivity extends AppCompatActivity {
 
     public void man_vs_man_place(View v) {
         String s = set(clock);
-        Boolean isable = false;
+        boolean isable = false;
         if (v.getId() == R.id.man_vs_man_place_1) {
             if (place[0][0] == 0) {
                 if (s.equals("O")) {
@@ -150,17 +149,7 @@ public class ManVSManActivity extends AppCompatActivity {
             s = R.string.xwin;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.gend).setMessage(s).setPositiveButton(R.string.newgame, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                recreate();
-            }
-        }).setNegativeButton(R.string.endgame, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
-            }
-        });
+        builder.setTitle(R.string.gend).setMessage(s).setPositiveButton(R.string.newgame, (dialog, which) -> recreate()).setNegativeButton(R.string.endgame, (dialog, which) -> finish());
         builder.create().show();
     }
 

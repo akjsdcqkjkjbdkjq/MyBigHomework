@@ -1,11 +1,7 @@
 package com.example.mybighomework;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.SystemClock;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -30,7 +26,7 @@ public class ManVSAIActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_man_vsaiactivity);
         if (isaifirst == 1) {
-            int i = 0; //randint() % 4;
+            int i = 1; //randint() % 4;
             switch (i) {
                 case 0:
                     play(1);
@@ -93,7 +89,7 @@ public class ManVSAIActivity extends AppCompatActivity {
                                 }
                             } else if (clock==6&&history[5]==4) {
                                 play(8);
-                            } else if (clock==6&&history[5]==8) {
+                            } else if (clock==6) {
                                 play(4);
                             }
                         } else if (history[4]==3) {
@@ -109,58 +105,58 @@ public class ManVSAIActivity extends AppCompatActivity {
                                 }
                             } else if (clock==6&&history[5]==2) {
                                 play(6);
-                            } else if (clock==6&&history[5]==6) {
+                            } else if (clock==6) {
                                 play(2);
                             }
                         } else if (history[4]==2) {
                             if (clock==6&&history[5]!=3){
                                 play(3);
-                            } else if (clock==6&&history[5]==3){
+                            } else if (clock==6){
                                 play(7);
                             }
                             if (history[6]==7){
                                 if (clock==8&&history[7]!=4){
                                     play(4);
-                                } else if (clock==8&&history[7]!=6) {
+                                } else if (clock==8) {
                                     play(6);
                                 }
                             }
                         } else if (history[4]==4) {
                             if (clock==6&&history[5]!=7){
                                 play(7);
-                            } else if (clock==6&&history[5]==7){
+                            } else if (clock==6){
                                 play(3);
                             }
                             if (history[6]==3){
                                 if (clock==8&&history[7]!=2){
                                     play(2);
-                                } else if (clock==8&&history[7]!=8) {
+                                } else if (clock==8) {
                                     play(8);
                                 }
                             }
                         } else if (history[4]==6) {
                             if (clock==6&&history[5]!=3){
                                 play(3);
-                            } else if (clock==6&&history[5]==3){
+                            } else if (clock==6){
                                 play(7);
                             }
                             if (history[6]==7){
                                 if (clock==8&&history[7]!=2){
                                     play(2);
-                                } else if (clock==8&&history[7]!=8) {
+                                } else if (clock==8) {
                                     play(8);
                                 }
                             }
                         } else if (history[4]==8) {
                             if (clock==6&&history[5]!=7){
                                 play(7);
-                            } else if (clock==6&&history[5]==7){
+                            } else if (clock==6){
                                 play(3);
                             }
                             if (history[6]==7){
                                 if (clock==8&&history[7]!=6){
                                     play(6);
-                                } else if (clock==8&&history[7]!=4) {
+                                } else if (clock==8) {
                                     play(4);
                                 }
                             }
@@ -179,13 +175,13 @@ public class ManVSAIActivity extends AppCompatActivity {
                             if (history[3]==9){
                                 if (clock==6&&history[5]!=4){
                                     play(4);
-                                } else if (clock == 6 && history[5] == 4) {
+                                } else if (clock == 6) {
                                     play(6);
                                 }
                                 if (history[6]==6){
                                     if (clock==8&&history[7]!=3){
                                         play(3);
-                                    } else if (clock==8&&history[7]!=2) {
+                                    } else if (clock==8) {
                                         play(2);
                                     }
                                 }
@@ -202,20 +198,20 @@ public class ManVSAIActivity extends AppCompatActivity {
                                     }
                                 } else if (clock == 6 && history[5] == 4) {
                                     play(9);
-                                } else if (clock == 6 && history[5] == 9) {
+                                } else if (clock == 6) {
                                     play(4);
                                 }
                             }
                         } else if (history[4] == 4) {
                             if (clock==6&&history[5]!=7){
                                 play(7);
-                            } else if (clock == 6 && history[5] == 7) {
+                            } else if (clock == 6) {
                                 play(3);
                             }
                             if (history[6]==3){
                                 if (clock==8&&history[7]!=2){
                                     play(2);
-                                } else if (clock==8&&history[7]==2) {
+                                } else if (clock==8) {
                                     play(9);
                                 }
                             }
@@ -230,28 +226,28 @@ public class ManVSAIActivity extends AppCompatActivity {
                             if (history[6]==3){
                                 if (clock==8&&history[7]!=2){
                                     play(2);
-                                } else if (clock==8&&history[7]==2&&history[5]==7) {
+                                } else if (clock==8&&history[5]==7) {
                                     play(9);
-                                } else if (clock==8&&history[7]==2&&history[5]==9) {
+                                } else if (clock==8&&history[5]==9) {
                                     play(7);
                                 }
                             } else if (history[6] == 7) {
                                 if (clock==8&&history[7]!=9){
                                     play(9);
-                                } else if (clock==8&&history[7]==9) {
+                                } else if (clock==8) {
                                     play(2);
                                 }
                             }
                         } else if (history[4] == 3) {
                             if (clock==6&&history[5]!=2){
                                 play(2);
-                            } else if (clock == 6 && history[5] == 2) {
+                            } else if (clock == 6) {
                                 play(9);
                             }
                             if (history[6]==9){
                                 if (clock==8&&history[7]!=6){
                                     play(6);
-                                } else if (clock==8&&history[7]==6) {
+                                } else if (clock==8) {
                                     play(4);
                                 }
                             }
@@ -270,13 +266,13 @@ public class ManVSAIActivity extends AppCompatActivity {
                             if (history[3]==9){
                                 if (clock==6&&history[5]!=2){
                                     play(2);
-                                } else if (clock == 6 && history[5] == 2) {
+                                } else if (clock == 6) {
                                     play(8);
                                 }
                                 if (history[6]==8){
                                     if (clock==8&&history[7]!=7){
                                         play(7);
-                                    } else if (clock==8&&history[7]!=4) {
+                                    } else if (clock==8) {
                                         play(4);
                                     }
                                 }
@@ -293,20 +289,20 @@ public class ManVSAIActivity extends AppCompatActivity {
                                     }
                                 } else if (clock == 6 && history[5] == 2) {
                                     play(9);
-                                } else if (clock == 6 && history[5] == 9) {
+                                } else if (clock == 6) {
                                     play(2);
                                 }
                             }
                         } else if (history[4] == 2) {
                             if (clock==6&&history[5]!=3){
                                 play(3);
-                            } else if (clock == 6 && history[5] == 3) {
+                            } else if (clock == 6) {
                                 play(7);
                             }
                             if (history[6]==7){
                                 if (clock==8&&history[7]!=4){
                                     play(4);
-                                } else if (clock==8&&history[7]==4) {
+                                } else if (clock==8) {
                                     play(9);
                                 }
                             }
@@ -321,28 +317,28 @@ public class ManVSAIActivity extends AppCompatActivity {
                             if (history[6]==7){
                                 if (clock==8&&history[7]!=4){
                                     play(4);
-                                } else if (clock==8&&history[7]==4&&history[5]==3) {
+                                } else if (clock==8&&history[5]==3) {
                                     play(9);
-                                } else if (clock==8&&history[7]==4&&history[5]==9) {
+                                } else if (clock==8&&history[5]==9) {
                                     play(3);
                                 }
                             } else if (history[6] == 3) {
                                 if (clock==8&&history[7]!=9){
                                     play(9);
-                                } else if (clock==8&&history[7]==9) {
+                                } else if (clock==8) {
                                     play(4);
                                 }
                             }
                         } else if (history[4] == 7) {
                             if (clock==6&&history[5]!=4){
                                 play(4);
-                            } else if (clock == 6 && history[5] == 4) {
+                            } else if (clock == 6) {
                                 play(9);
                             }
                             if (history[6]==9){
                                 if (clock==8&&history[7]!=8){
                                     play(8);
-                                } else if (clock==8&&history[7]==8) {
+                                } else if (clock==8) {
                                     play(2);
                                 }
                             }
@@ -400,7 +396,7 @@ public class ManVSAIActivity extends AppCompatActivity {
                             } else {
                                 if (clock == 6 && history[5] == 4) {
                                     play(5);
-                                } else if (clock == 6 && history[5] == 5) {
+                                } else if (clock == 6) {
                                     play(4);
                                 }
                             }
@@ -418,7 +414,7 @@ public class ManVSAIActivity extends AppCompatActivity {
                             } else {
                                 if (clock == 6 && history[5] == 6) {
                                     play(5);
-                                } else if (clock == 6 && history[5] == 5) {
+                                } else if (clock == 6) {
                                     play(6);
                                 }
                             }
@@ -459,7 +455,7 @@ public class ManVSAIActivity extends AppCompatActivity {
                             } else {
                                 if (clock == 6 && history[5] == 2) {
                                     play(5);
-                                } else if (clock == 6 && history[5] == 5) {
+                                } else if (clock == 6) {
                                     play(2);
                                 }
                             }
@@ -477,7 +473,7 @@ public class ManVSAIActivity extends AppCompatActivity {
                             } else {
                                 if (clock == 6 && history[5] == 8) {
                                     play(5);
-                                } else if (clock == 6 && history[5] == 5) {
+                                } else if (clock == 6) {
                                     play(8);
                                 }
                             }
@@ -507,7 +503,7 @@ public class ManVSAIActivity extends AppCompatActivity {
                             play(9);
                         } else if (clock==4&&history[3]==6) {
                             play(4);
-                        } else if (clock==4&&history[3]==4) {
+                        } else if (clock==4&&history[3]==2) {
                             play(8);
                         } else if (clock==4&&history[3]==8) {
                             play(2);
@@ -527,7 +523,7 @@ public class ManVSAIActivity extends AppCompatActivity {
                                 }
                             } else if (clock==6&&history[5]==2) {
                                 play(4);
-                            } else if (clock==6&&history[5]==4) {
+                            } else if (clock==6) {
                                 play(2);
                             }
                         } else if (history[4]==9) {
@@ -543,58 +539,58 @@ public class ManVSAIActivity extends AppCompatActivity {
                                 }
                             } else if (clock==6&&history[5]==6) {
                                 play(8);
-                            } else if (clock==6&&history[5]==8) {
+                            } else if (clock==6) {
                                 play(6);
                             }
                         } else if (history[4]==6) {
                             if (clock==6&&history[5]!=9){
                                 play(9);
-                            } else if (clock==6&&history[5]==9){
+                            } else if (clock==6){
                                 play(1);
                             }
                             if (history[6]==1){
                                 if (clock==8&&history[7]!=2){
                                     play(2);
-                                } else if (clock==8&&history[7]!=8) {
+                                } else if (clock==8) {
                                     play(8);
                                 }
                             }
                         } else if (history[4]==2) {
                             if (clock==6&&history[5]!=1){
                                 play(1);
-                            } else if (clock==6&&history[5]==1){
+                            } else if (clock==6){
                                 play(9);
                             }
                             if (history[6]==9){
                                 if (clock==8&&history[7]!=6){
                                     play(6);
-                                } else if (clock==8&&history[7]!=4) {
+                                } else if (clock==8) {
                                     play(4);
                                 }
                             }
                         } else if (history[4]==8) {
                             if (clock==6&&history[5]!=9){
                                 play(9);
-                            } else if (clock==6&&history[5]==9){
+                            } else if (clock==6){
                                 play(1);
                             }
                             if (history[6]==1){
                                 if (clock==8&&history[7]!=6){
                                     play(6);
-                                } else if (clock==8&&history[7]!=4) {
+                                } else if (clock==8) {
                                     play(4);
                                 }
                             }
                         } else if (history[4]==4) {
                             if (clock==6&&history[5]!=1){
                                 play(1);
-                            } else if (clock==6&&history[5]==1){
+                            } else if (clock==6){
                                 play(9);
                             }
                             if (history[6]==1){
                                 if (clock==8&&history[7]!=8){
                                     play(8);
-                                } else if (clock==8&&history[7]!=2) {
+                                } else if (clock==8) {
                                     play(2);
                                 }
                             }
@@ -613,13 +609,13 @@ public class ManVSAIActivity extends AppCompatActivity {
                             if (history[3]==7){
                                 if (clock==6&&history[5]!=2){
                                     play(2);
-                                } else if (clock == 6 && history[5] == 2) {
+                                } else if (clock == 6) {
                                     play(8);
                                 }
                                 if (history[6]==8){
                                     if (clock==8&&history[7]!=9){
                                         play(9);
-                                    } else if (clock==8&&history[7]!=6) {
+                                    } else if (clock==8) {
                                         play(6);
                                     }
                                 }
@@ -636,20 +632,20 @@ public class ManVSAIActivity extends AppCompatActivity {
                                     }
                                 } else if (clock == 6 && history[5] == 2) {
                                     play(7);
-                                } else if (clock == 6 && history[5] == 7) {
+                                } else if (clock == 6) {
                                     play(2);
                                 }
                             }
                         } else if (history[4] == 2) {
                             if (clock==6&&history[5]!=1){
                                 play(1);
-                            } else if (clock == 6 && history[5] == 1) {
+                            } else if (clock == 6) {
                                 play(9);
                             }
                             if (history[6]==9){
                                 if (clock==8&&history[7]!=6){
                                     play(6);
-                                } else if (clock==8&&history[7]==6) {
+                                } else if (clock==8) {
                                     play(7);
                                 }
                             }
@@ -664,28 +660,28 @@ public class ManVSAIActivity extends AppCompatActivity {
                             if (history[6]==9){
                                 if (clock==8&&history[7]!=6){
                                     play(6);
-                                } else if (clock==8&&history[7]==6&&history[5]==1) {
+                                } else if (clock==8&&history[5]==1) {
                                     play(7);
-                                } else if (clock==8&&history[7]==6&&history[5]==7) {
+                                } else if (clock==8&&history[5]==7) {
                                     play(1);
                                 }
                             } else if (history[6] == 1) {
                                 if (clock==8&&history[7]!=7){
                                     play(7);
-                                } else if (clock==8&&history[7]==7) {
+                                } else if (clock==8) {
                                     play(6);
                                 }
                             }
                         } else if (history[4] == 9) {
                             if (clock==6&&history[5]!=6){
                                 play(6);
-                            } else if (clock == 6 && history[5] == 6) {
+                            } else if (clock == 6) {
                                 play(7);
                             }
                             if (history[6]==7){
                                 if (clock==8&&history[7]!=8){
                                     play(8);
-                                } else if (clock==8&&history[7]==8) {
+                                } else if (clock==8) {
                                     play(2);
                                 }
                             }
@@ -704,13 +700,13 @@ public class ManVSAIActivity extends AppCompatActivity {
                             if (history[3]==7){
                                 if (clock==6&&history[5]!=6){
                                     play(6);
-                                } else if (clock == 6 && history[5] == 6) {
+                                } else if (clock == 6) {
                                     play(4);
                                 }
                                 if (history[6]==4){
                                     if (clock==8&&history[7]!=1){
                                         play(1);
-                                    } else if (clock==8&&history[7]!=2) {
+                                    } else if (clock==8) {
                                         play(2);
                                     }
                                 }
@@ -727,20 +723,20 @@ public class ManVSAIActivity extends AppCompatActivity {
                                     }
                                 } else if (clock == 6 && history[5] == 6) {
                                     play(7);
-                                } else if (clock == 6 && history[5] == 7) {
+                                } else if (clock == 6) {
                                     play(6);
                                 }
                             }
                         } else if (history[4] == 6) {
                             if (clock==6&&history[5]!=9){
                                 play(9);
-                            } else if (clock == 6 && history[5] == 9) {
+                            } else if (clock == 6) {
                                 play(1);
                             }
                             if (history[6]==1){
                                 if (clock==8&&history[7]!=2){
                                     play(2);
-                                } else if (clock==8&&history[7]==2) {
+                                } else if (clock==8) {
                                     play(7);
                                 }
                             }
@@ -755,28 +751,28 @@ public class ManVSAIActivity extends AppCompatActivity {
                             if (history[6]==1){
                                 if (clock==8&&history[7]!=2){
                                     play(2);
-                                } else if (clock==8&&history[7]==2&&history[5]==9) {
+                                } else if (clock==8&&history[5]==9) {
                                     play(7);
-                                } else if (clock==8&&history[7]==2&&history[5]==7) {
+                                } else if (clock==8&&history[5]==7) {
                                     play(9);
                                 }
                             } else if (history[6] == 9) {
                                 if (clock==8&&history[7]!=7){
                                     play(7);
-                                } else if (clock==8&&history[7]==7) {
+                                } else if (clock==8) {
                                     play(2);
                                 }
                             }
                         } else if (history[4] == 1) {
                             if (clock==6&&history[5]!=2){
                                 play(2);
-                            } else if (clock == 6 && history[5] == 2) {
+                            } else if (clock == 6) {
                                 play(7);
                             }
                             if (history[6]==7){
                                 if (clock==8&&history[7]!=4){
                                     play(4);
-                                } else if (clock==8&&history[7]==4) {
+                                } else if (clock==8) {
                                     play(6);
                                 }
                             }
@@ -930,7 +926,7 @@ public class ManVSAIActivity extends AppCompatActivity {
 
     public void man_vs_ai_place(View v) {
         String s = set(clock);
-        Boolean isable = false;
+        boolean isable = false;
         if (v.getId() == R.id.man_vs_ai_place_1) {
             if (place[0][0] == 0) {
                 if (s.equals("O")) {
@@ -1116,17 +1112,7 @@ public class ManVSAIActivity extends AppCompatActivity {
             s = R.string.xwin;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.gend).setMessage(s).setPositiveButton(R.string.newgame, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                recreate();
-            }
-        }).setNegativeButton(R.string.endgame, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
-            }
-        });
+        builder.setTitle(R.string.gend).setMessage(s).setPositiveButton(R.string.newgame, (dialog, which) -> recreate()).setNegativeButton(R.string.endgame, (dialog, which) -> finish());
         builder.create().show();
     }
 
