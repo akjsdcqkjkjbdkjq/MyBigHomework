@@ -25,6 +25,7 @@ public class ManVSManActivity extends AppCompatActivity {
 
     public void man_vs_man_place(View v) {
         String s = set(clock);
+        Boolean isable = false;
         if (v.getId() == R.id.man_vs_man_place_1) {
             if (place[0][0] == 0) {
                 if (s.equals("O")) {
@@ -32,6 +33,7 @@ public class ManVSManActivity extends AppCompatActivity {
                 } else {
                     place[0][0] = -1;
                 }
+                isable = true;
             }
         } else if (v.getId() == R.id.man_vs_man_place_2) {
             if (place[0][1] == 0) {
@@ -40,6 +42,7 @@ public class ManVSManActivity extends AppCompatActivity {
                 } else {
                     place[0][1] = -1;
                 }
+                isable = true;
             }
         } else if (v.getId() == R.id.man_vs_man_place_3) {
             if (place[0][2] == 0) {
@@ -48,6 +51,7 @@ public class ManVSManActivity extends AppCompatActivity {
                 } else {
                     place[0][2] = -1;
                 }
+                isable = true;
             }
         } else if (v.getId() == R.id.man_vs_man_place_4) {
             if (place[1][0] == 0) {
@@ -56,6 +60,7 @@ public class ManVSManActivity extends AppCompatActivity {
                 } else {
                     place[1][0] = -1;
                 }
+                isable = true;
             }
         } else if (v.getId() == R.id.man_vs_man_place_5) {
             if (place[1][1] == 0) {
@@ -64,6 +69,7 @@ public class ManVSManActivity extends AppCompatActivity {
                 } else {
                     place[1][1] = -1;
                 }
+                isable = true;
             }
         } else if (v.getId() == R.id.man_vs_man_place_6) {
             if (place[1][2] == 0) {
@@ -72,6 +78,7 @@ public class ManVSManActivity extends AppCompatActivity {
                 } else {
                     place[1][2] = -1;
                 }
+                isable = true;
             }
         } else if (v.getId() == R.id.man_vs_man_place_7) {
             if (place[2][0] == 0) {
@@ -80,6 +87,7 @@ public class ManVSManActivity extends AppCompatActivity {
                 } else {
                     place[2][0] = -1;
                 }
+                isable = true;
             }
         } else if (v.getId() == R.id.man_vs_man_place_8) {
             if (place[2][1] == 0) {
@@ -88,6 +96,7 @@ public class ManVSManActivity extends AppCompatActivity {
                 } else {
                     place[2][1] = -1;
                 }
+                isable = true;
             }
         } else if (v.getId() == R.id.man_vs_man_place_9) {
             if (place[2][2] == 0) {
@@ -96,15 +105,18 @@ public class ManVSManActivity extends AppCompatActivity {
                 } else {
                     place[2][2] = -1;
                 }
+                isable = true;
             }
         }
-        wait_exchange(s);
-        TextView tv = findViewById(v.getId());
-        tv.setText(s);
-        clock++;
-        judge();
-        if (clock == 9 && res == 0) {
-            show(res);
+        if (isable) {
+            TextView tv = findViewById(v.getId());
+            tv.setText(s);
+            wait_exchange(s);
+            clock++;
+            judge();
+            if (clock == 9 && res == 0) {
+                show(res);
+            }
         }
     }
 
