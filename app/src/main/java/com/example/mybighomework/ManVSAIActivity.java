@@ -16,11 +16,11 @@ public class ManVSAIActivity extends AppCompatActivity {
             {0, 0, 0},
             {0, 0, 0}
     };
-    int isaifirst = 1; //randint()%2;
+    int isaifirst = 0; //randint()%2;
     int clock = 0;
     int res = 0;
     int[] history = {-1, -1, -1, -1, -1, -1, -1, -1, -1};
-
+    int g;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -486,13 +486,21 @@ public class ManVSAIActivity extends AppCompatActivity {
             } else if (clock == 3 && (history[2] == k % 4 + 4 || history[2] == (k + 3) % 4 + 4)) {
                 play((k + 3) % 4);
             } else if (clock == 3 && history[2] == (k + 2) % 4) {
-
-
-                ///////////////////////////////
-
-
-
-
+                int i = randint() % 4;
+                switch (i) {
+                    case 0:
+                        play(k % 4 + 4);
+                        break;
+                    case 1:
+                        play((k + 1) % 4 + 4);
+                        break;
+                    case 2:
+                        play((k + 2) % 4 + 4);
+                        break;
+                    case 3:
+                        play((k + 3) % 4 + 4);
+                        break;
+                }
             } else if (clock == 3 && history[2] == (k + 3) % 4) {
                 play(k % 4 + 4);
             } else if (clock == 3 && history[2] == (k + 1) % 4) {
@@ -548,16 +556,190 @@ public class ManVSAIActivity extends AppCompatActivity {
                     }
                 }
             } else if (history[3] == (k + 1) % 4) {
-
+                if (clock == 5 && history[4] != (k + 3) % 4) {
+                    play((k + 3) % 4);
+                } else if (clock == 5 && history[4] == (k + 3) % 4) {
+                    play(k % 4 + 4);
+                }
+                if (clock == 7 && history[2] != (k + 2) % 4 + 4 && history[6] != (k + 2) % 4 + 4) {
+                    play((k + 2) % 4 + 4);
+                } else if (clock == 7 && history[2] == (k + 2) % 4 + 4 && history[6] == (k + 1) % 4 + 4) {
+                    int i = randint() % 2;
+                    switch (i) {
+                        case 0:
+                            play((k + 3) % 4 + 4);
+                            break;
+                        case 1:
+                            play((k + 2) % 4);
+                            break;
+                    }
+                } else if (clock == 7 && history[2] == (k + 2) % 4 + 4 && history[6] == (k + 3) % 4 + 4) {
+                    int i = randint() % 2;
+                    switch (i) {
+                        case 0:
+                            play((k + 1) % 4 + 4);
+                            break;
+                        case 1:
+                            play((k + 2) % 4);
+                            break;
+                    }
+                } else if (clock == 7 && history[2] == (k + 2) % 4 + 4 && history[6] == (k + 2) % 4) {
+                    int i = randint() % 2;
+                    switch (i) {
+                        case 0:
+                            play((k + 3) % 4 + 4);
+                            break;
+                        case 1:
+                            play((k + 1) % 4 + 4);
+                            break;
+                    }
+                } else if (clock == 7 && history[2] != (k + 2) % 4 + 4 && history[6] == (k + 2) % 4 + 4) {
+                    int i = randint() % 2;
+                    switch (i) {
+                        case 0:
+                            play((k + 3) % 4 + 4);
+                            break;
+                        case 1:
+                            play((k + 2) % 4);
+                            break;
+                    }
+                }
             } else if (history[3] == k % 4 + 4) {
-
+                if (clock == 5 && history[4] != (k + 2) % 4 + 4) {
+                    play((k + 2) % 4 + 4);
+                } else if (clock == 5 && history[4] == (k + 2) % 4 + 4 && history[2] == (k + 2) % 4) {
+                    play((k + 1) % 4);
+                } else if (clock == 5 && history[4] == (k + 2) % 4 + 4 && history[2] == (k + 3) % 4) {
+                    int i = randint() % 2;
+                    switch (i) {
+                        case 0:
+                            play((k + 3) % 4 + 4);
+                            break;
+                        case 1:
+                            play((k + 1) % 4 + 4);
+                            break;
+                    }
+                }
+                if (history[5] == (k + 1) % 4) {
+                    if (clock == 7 && history[6] != (k + 3) % 4) {
+                        play((k + 3) % 4);
+                    } else if (clock == 7 && history[6] == (k + 3) % 4) {
+                        play((k + 3) % 4 + 4);
+                    }
+                } else if (history[5] == (k + 1) % 4 + 4) {
+                    if (clock == 7 && history[6] != (k + 3) % 4 + 4) {
+                        play((k + 3) % 4 + 4);
+                    } else if (clock == 7 && history[6] == (k + 3) % 4 + 4) {
+                        play((k + 2) % 4);
+                    }
+                } else if (history[5] == (k + 3) % 4 + 4) {
+                    if (clock == 7 && history[6] != (k + 1) % 4 + 4) {
+                        play((k + 1) % 4 + 4);
+                    } else if (clock == 7 && history[6] == (k + 1) % 4 + 4) {
+                        play((k + 1) % 4);
+                    }
+                }
             } else if (history[3] == (k + 1) % 4 + 4) {
-
+                if (clock == 5 && history[4] != (k + 3) % 4 + 4) {
+                    play((k + 3) % 4 + 4);
+                } else if (clock == 5 && history[4] == (k + 3) % 4 + 4 && history[2] == (k + 2) % 4) {
+                    play((k + 3) % 4);
+                } else if (clock == 5 && history[4] == (k + 3) % 4 + 4 && history[2] == (k + 1) % 4) {
+                    int i = randint() % 2;
+                    switch (i) {
+                        case 0:
+                            play(k % 4 + 4);
+                            break;
+                        case 1:
+                            play((k + 2) % 4 + 4);
+                            break;
+                    }
+                }
+                if (history[5] == (k + 3) % 4) {
+                    if (clock == 7 && history[6] != (k + 1) % 4) {
+                        play((k + 1) % 4);
+                    } else if (clock == 7 && history[6] == (k + 1) % 4) {
+                        play((k + 1) % 4 + 4);
+                    }
+                } else if (history[5] == k % 4 + 4) {
+                    if (clock == 7 && history[6] != (k + 2) % 4 + 4) {
+                        play((k + 2) % 4 + 4);
+                    } else if (clock == 7 && history[6] == (k + 2) % 4 + 4) {
+                        play((k + 2) % 4);
+                    }
+                } else if (history[5] == (k + 2) % 4 + 4) {
+                    if (clock == 7 && history[6] != k % 4 + 4) {
+                        play(k % 4 + 4);
+                    } else if (clock == 7 && history[6] == k % 4 + 4) {
+                        play((k + 3) % 4);
+                    }
+                }
+            } else if (history[3] == (k + 3) % 4 + 4) {
+                if (clock == 5 && history[4] != (k + 1) % 4 + 4) {
+                    play((k + 1) % 4 + 4);
+                } else if (clock == 5 && history[4] == (k + 1) % 4 + 4) {
+                    play((k + 1) % 4);
+                }
+                if (clock == 7 && history[6] != (k + 3) % 4) {
+                    play((k + 3) % 4);
+                } else if (clock == 7 && history[6] == (k + 3) % 4) {
+                    play(k % 4 + 4);
+                }
+            } else if (history[3] == (k + 2) % 4 + 4) {
+                if (clock == 5 && history[4] != k%4+4) {
+                    play(k%4+4);
+                } else if (clock == 5 && history[4] == k%4+4) {
+                    play((k+3)%4);
+                }
+                if (clock == 7 && history[6] != (k+1)%4) {
+                    play((k+1)%4);
+                } else if (clock == 7 && history[6] == (k+1)%4) {
+                    play((k+1)%4+4);
+                }
             }
         } else if (k >= 4 && k <= 7) {
 
         } else if (k == 8) {
+            if (clock==1){
+                g = randint()%4;
+                play(g);
+            }
+            if (clock==3&&history[2]==(g+1)%4+4){
+                play((g+3)%4+4);
+            } else if (clock == 3 && history[2] ==(g+3)%4+4) {
+                play((g+1)%4+4);
+            } else if (clock == 3 && history[2] ==(g+1)%4) {
+                play((g+3)%4);
+            } else if (clock == 3 && history[2] ==(g+3)%4) {
+                play((g+1)%4);
+            } else if (clock == 3 && history[2] ==g%4+4) {
+                play((g+2)%4+4);
+            } else if (clock == 3 && history[2] ==(g+2)%4+4) {
+                play(g%4+4);
+            } else if (clock == 3 && history[2] ==(g+2)%4) {
+                int i = randint() % 2;
+                switch (i) {
+                    case 0:
+                        play((g+1)%4);
+                        break;
+                    case 1:
+                        play((g+3)%4);
+                        break;
+                }
+            }
+            if (history[3]==(g+3)%4+4){
 
+            } else if (history[3]==(g+1)%4+4) {
+
+            } else if (history[3]==(g+2)%4+4) {
+
+            } else if (history[3]==g%4+4) {
+
+            } else if (history[3]==(g+1)%4) {
+
+            } else if (history[3]==(g+3)%4) {
+
+            }
         }
     }
 
