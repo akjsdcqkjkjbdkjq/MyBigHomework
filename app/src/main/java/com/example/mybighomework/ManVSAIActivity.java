@@ -698,7 +698,10 @@ public class ManVSAIActivity extends AppCompatActivity {
                 }
             }
         } else if (k >= 4 && k <= 7) {
+            if (clock==1){
+                g  = k-4;
 
+            }
         } else if (k == 8) {
             if (clock==1){
                 g = randint()%4;
@@ -728,17 +731,199 @@ public class ManVSAIActivity extends AppCompatActivity {
                 }
             }
             if (history[3]==(g+3)%4+4){
-
+                if (clock==5&&history[4]==(g+3)%4){
+                    play((g+1)%4);
+                } else if (clock==5&&history[4]==g%4+4) {
+                    play((g+2)%4+4);
+                } else if (clock==5&&history[4]==(g+1)%4) {
+                    play((g+3)%4);
+                } else if (clock==5&&history[4]==(g+2)%4+4) {
+                    play(g%4+4);
+                } else if (clock==5&&history[4]==(g+2)%4) {
+                    int i = randint() % 2;
+                    switch (i) {
+                        case 0:
+                            play(g%4+4);
+                            break;
+                        case 1:
+                            play((g+3)%4);
+                            break;
+                    }
+                }
+                if (history[5]==(g+1)%4){
+                    if (clock==7&&history[6]==g%4+4){
+                        play((g+2)%4+4);
+                    } else if (clock==7&&history[6]==(g+2)%4+4) {
+                        play(g%4+4);
+                    } else if (clock==7&&history[6]==(g+2)%4) {
+                        int i = randint() % 2;
+                        switch (i) {
+                            case 0:
+                                play(g%4+4);
+                                break;
+                            case 1:
+                                play((g+2)%4+4);
+                                break;
+                        }
+                    }
+                } else if (history[5] == (g + 2) % 4 + 4) {
+                    if (clock==7&&history[6]==(g+1)%4){
+                        play((g+3)%4);
+                    } else if (clock==7&&history[6]==(g+3)%4) {
+                        play((g+1)%4);
+                    } else if (clock==7&&history[6]==(g+2)%4) {
+                        int i = randint() % 2;
+                        switch (i) {
+                            case 0:
+                                play(g%4+4);
+                                break;
+                            case 1:
+                                play((g+3)%4);
+                                break;
+                        }
+                    }
+                } else if (history[5] == g%4+4) {
+                    if (clock==7&&history[6]!=(g+3)%4){
+                        play((g+3)%4);
+                    } else if (clock == 7 && history[6] == (g + 3) % 4) {
+                        play((g+1)%4);
+                    }
+                } else if (history[5] == (g+3)%4) {
+                    if (clock==7&&history[6]!=g%4+4){
+                        play(g%4+4);
+                    } else if (clock == 7 && history[6] == g%4+4) {
+                        play((g+2)%4+4);
+                    }
+                }
             } else if (history[3]==(g+1)%4+4) {
-
+                if (clock==5&&history[4]!=(g+1)%4){
+                    play((g+1)%4);
+                } else if (clock==5&&history[4]==(g+1)%4) {
+                    play((g+3)%4);
+                }
+                if (clock==7&&history[6]!=g%4+4){
+                    play(g%4+4);
+                } else if (clock==7&&history[6]==g%4+4) {
+                    play((g+2)%4+4);
+                }
             } else if (history[3]==(g+2)%4+4) {
-
+                if (clock==5&&history[4]==(g+1)%4){
+                    play((g+3)%4);
+                } else if (clock==5&&history[4]==(g+1)%4+4) {
+                    play((g+3)%4+4);
+                } else if (clock==5&&history[4]==(g+3)%4) {
+                    play((g+1)%4);
+                } else if (clock==5&&history[4]==(g+3)%4+4) {
+                    play((g+1)%4+4);
+                } else if (clock==5&&history[4]==(g+2)%4) {
+                    int i = randint() % 2;
+                    switch (i) {
+                        case 0:
+                            play((g+1)%4);
+                            break;
+                        case 1:
+                            play((g+1)%4+4);
+                            break;
+                    }
+                }
+                if (history[5]==(g+3)%4){
+                    if (clock==7&&history[6]==(g+1)%4+4){
+                        play((g+3)%4+4);
+                    } else if (clock==7&&history[6]==(g+3)%4+4) {
+                        play((g+1)%4+4);
+                    } else if (clock==7&&history[6]==(g+2)%4) {
+                        int i = randint() % 2;
+                        switch (i) {
+                            case 0:
+                                play((g+1)%4+4);
+                                break;
+                            case 1:
+                                play((g+3)%4+4);
+                                break;
+                        }
+                    }
+                } else if (history[5] == (g+3)%4+4) {
+                    if (clock==7&&history[6]==(g+3)%4){
+                        play((g+1)%4);
+                    } else if (clock==7&&history[6]==(g+1)%4) {
+                        play((g+3)%4);
+                    } else if (clock==7&&history[6]==(g+2)%4) {
+                        int i = randint() % 2;
+                        switch (i) {
+                            case 0:
+                                play((g+1)%4+4);
+                                break;
+                            case 1:
+                                play((g+1)%4);
+                                break;
+                        }
+                    }
+                } else if (history[5] == (g+1)%4+4) {
+                    if (clock==7&&history[6]!=(g+1)%4){
+                        play((g+1)%4);
+                    } else if (clock == 7 && history[6] == (g+1)%4) {
+                        play((g+3)%4);
+                    }
+                } else if (history[5] == (g+1)%4) {
+                    if (clock==7&&history[6]!=(g+1)%4+4){
+                        play((g+1)%4+4);
+                    } else if (clock == 7 && history[6] == (g+1)%4+4) {
+                        play((g+3)%4+4);
+                    }
+                }
             } else if (history[3]==g%4+4) {
-
+                if (clock==5&&history[4]!=(g+3)%4){
+                    play((g+3)%4);
+                } else if (clock==5&&history[4]==(g+3)%4) {
+                    play((g+1)%4);
+                }
+                if (clock==7&&history[6]!=(g+1)%4+4){
+                    play((g+1)%4+4);
+                } else if (clock==7&&history[6]==(g+1)%4+4) {
+                    play((g+3)%4+4);
+                }
             } else if (history[3]==(g+1)%4) {
-
+                if (clock==5&&history[4]!=(g+1)%4+4){
+                    play((g+1)%4+4);
+                } else if (clock==5&&history[4]==(g+1)%4+4) {
+                    play((g+3)%4+4);
+                }
+                if (clock==7&&history[6]!=g%4+4&&history[6]!=(g+2)%4+4){
+                    int i = randint() % 2;
+                    switch (i) {
+                        case 0:
+                            play(g%4+4);
+                            break;
+                        case 1:
+                            play((g+2)%4+4);
+                            break;
+                    }
+                } else if (clock == 7 && history[6] == g % 4 + 4) {
+                    play((g+2)%4+4);
+                } else if (clock == 7 && history[6] == (g+2)%4+4) {
+                    play(g%4+4);
+                }
             } else if (history[3]==(g+3)%4) {
-
+                if (clock==5&&history[4]!=g%4+4){
+                    play(g%4+4);
+                } else if (clock==5&&history[4]==g%4+4) {
+                    play((g+2)%4+4);
+                }
+                if (clock==7&&history[6]!=(g+1)%4+4&&history[6]!=(g+3)%4+4){
+                    int i = randint() % 2;
+                    switch (i) {
+                        case 0:
+                            play((g+1)%4+4);
+                            break;
+                        case 1:
+                            play((g+3)%4+4);
+                            break;
+                    }
+                } else if (clock == 7 && history[6] == (g+1)%4+4) {
+                    play((g+3)%4+4);
+                } else if (clock == 7 && history[6] == (g+3)%4+4) {
+                    play((g+1)%4+4);
+                }
             }
         }
     }
