@@ -1340,7 +1340,6 @@ public class ManVSAIActivity extends AppCompatActivity {
                                 case 1:
                                     play((g + 2) % 4 + 4);
                                     break;
-
                             }
                         }
                     } else if (history[5] == (g + 2) % 4) {
@@ -1420,7 +1419,7 @@ public class ManVSAIActivity extends AppCompatActivity {
                         if (clock == 7 && history[6] != (g + 3) % 4) {
                             play((g + 3) % 4);
                         } else if (clock == 7 && history[6] == (g + 3) % 4) {
-                            play((g + 1) % 4);
+                            play((g) % 4);
                         }
                     }
                 } else if (history[3] == (g + 3) % 4) {
