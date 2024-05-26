@@ -5,13 +5,15 @@
     <string name="main_button_2">人机模式</string>
     <string name="mmw1">X的回合</string>
     <string name="mmw2">O的回合</string>
-    <string name="maw1">思考中</string>
-    <string name="maw2">到你了</string>
+    <string name="maw1">AI的回合</string>
+    <string name="maw2">你的回合</string>
     <string name="gend">游戏结束</string>
     <string name="owin">O获胜</string>
     <string name="xwin">X获胜</string>
     <string name="newgame">新游戏</string>
     <string name="endgame">结束游戏</string>
     <string name="even">平局</string>
+    <string name="firstplay">先手</string>
+    <string name="secondplay">后手</string>
 
 </resources>

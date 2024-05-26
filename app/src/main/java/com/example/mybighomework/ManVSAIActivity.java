@@ -3,6 +3,7 @@ package com.example.mybighomework;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -12,7 +13,7 @@ import java.util.Random;
 
 public class ManVSAIActivity extends AppCompatActivity {
     int[][] place = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
-    int isaifirst = 0; //randint()%2;
+    int isaifirst;
     int clock = 0;
     int res = 0;
     int[] history = {-1, -1, -1, -1, -1, -1, -1, -1, -1};
@@ -22,22 +23,34 @@ public class ManVSAIActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_man_vsaiactivity);
-        wait_exchange(set(clock + 1));
-        if (isaifirst == 1) {
-            int i = randint() % 4;
-            play(i);
-        }
     }
-
+    public void first_play(View v){
+        LinearLayout cc = findViewById(R.id.choice);
+        LinearLayout bb = findViewById(R.id.box);
+        cc.setVisibility(View.GONE);
+        bb.setVisibility(View.VISIBLE);
+        wait_exchange(set(clock + 1));
+        isaifirst=0;
+    }
+    public void second_play(View v){
+        LinearLayout cc = findViewById(R.id.choice);
+        LinearLayout bb = findViewById(R.id.box);
+        cc.setVisibility(View.GONE);
+        bb.setVisibility(View.VISIBLE);
+        wait_exchange(set(clock + 1));
+        isaifirst=1;
+        int i = randint() % 4;
+        play(i);
+    }
     public void ai_turn() {
         if (isaifirst == 1) {
-            hardmodefirst(history[0]);
+            play_first(history[0]);
         } else {
-            hardmodesecond(history[0]);
+            play_second(history[0]);
         }
     }
 
-    public void hardmodefirst(int k) {
+    public void play_first(int k) {
         if (history[1] == 8) {
             if (clock == 2) {
                 int i = randint() % 3;
@@ -473,7 +486,7 @@ public class ManVSAIActivity extends AppCompatActivity {
         }
     }
 
-    public void hardmodesecond(int k) {
+    public void play_second(int k) {
         if (k >= 0 && k <= 3) {
             if (clock == 1) {
                 play(8);
@@ -1479,7 +1492,72 @@ public class ManVSAIActivity extends AppCompatActivity {
                     }
                 }
             } else if (history[1] == (g + 2) % 4 + 4) {
+                if (clock == 3&&history[2]==(g+3)%4) {
+                    play(g%4);
+                } else if (clock == 3&&history[2]==g%4) {
+                    play((g+3)%4);
+                } else if (clock == 3&&history[2]==(g+3)%4+4) {
+                    int i = randint() % 3;
+                    switch (i) {
+                        case 0:
+                            play((g+1)%4);
+                            break;
+                        case 1:
+                            play((g) % 4);
+                            break;
+                        case 2:
+                            play((g+3)%4);
+                            break;
+                    }
+                } else if (clock == 3&&history[2]==(g+1)%4+4) {
+                    int i = randint() % 3;
+                    switch (i) {
+                        case 0:
+                            play((g+2)%4);
+                            break;
+                        case 1:
+                            play((g+3) % 4);
+                            break;
+                        case 2:
+                            play((g)%4);
+                            break;
+                    }
+                } else if (clock == 3&&(history[2]==(g+2)%4||history[2]==(g+1)%4)) {
+                    int i = randint() % 2;
+                    switch (i) {
+                        case 0:
+                            play((g+3)%4);
+                            break;
+                        case 1:
+                            play((g) % 4);
+                            break;
+                    }
+                } else if (clock == 3&&history[2]==8) {
+                    int i = randint() % 4;
+                    switch (i) {
+                        case 0:
+                            play((g+2)%4);
+                            break;
+                        case 1:
+                            play((g+3) % 4);
+                            break;
+                        case 2:
+                            play((g)%4);
+                            break;
+                        case 3:
+                            play((g+1)%4);
+                            break;
+                    }
+                }
+                if (history[3]==(g+3)%4){
 
+                } else if (history[3]==(g)%4) {
+
+                } else if (history[3]==(g+2)%4) {
+
+                } else if (history[3]==(g+1)%4) {
+
+                }
             }
         } else if (k == 8) {
             if (clock == 1) {
@@ -1554,7 +1632,7 @@ public class ManVSAIActivity extends AppCompatActivity {
                         int i = randint() % 2;
                         switch (i) {
                             case 0:
-                                play(g % 4 + 4);
+                                play((g + 1) % 4 );
                                 break;
                             case 1:
                                 play((g + 3) % 4);
@@ -1630,7 +1708,7 @@ public class ManVSAIActivity extends AppCompatActivity {
                         int i = randint() % 2;
                         switch (i) {
                             case 0:
-                                play((g + 1) % 4 + 4);
+                                play((g + 3) % 4);
                                 break;
                             case 1:
                                 play((g + 1) % 4);
@@ -1862,7 +1940,7 @@ public class ManVSAIActivity extends AppCompatActivity {
         TextView who1 = findViewById(R.id.man_vs_ai_who_1);
         TextView who2 = findViewById(R.id.man_vs_ai_who_2);
         ProgressBar wait = findViewById(R.id.man_vs_ai_wait);
-        if (isaifirst == 1) {
+        if (isaifirst == 1&&clock!=8) {
             if (s.equals("X")) {
                 who1.setVisibility(View.GONE);
                 who2.setVisibility(View.VISIBLE);
@@ -1872,7 +1950,7 @@ public class ManVSAIActivity extends AppCompatActivity {
                 who2.setVisibility(View.GONE);
                 wait.setVisibility(View.GONE);
             }
-        } else {
+        } else if (isaifirst == 0&&clock!=8){
             if (s.equals("X")) {
                 who1.setVisibility(View.VISIBLE);
                 who2.setVisibility(View.GONE);

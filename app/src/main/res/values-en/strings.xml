@@ -14,4 +14,6 @@
     <string name="newgame">New Game</string>
     <string name="endgame">End Game</string>
     <string name="even">Even</string>
+    <string name="firstplay">First</string>
+    <string name="secondplay">Second</string>
 </resources>
