@@ -24,24 +24,27 @@ public class ManVSAIActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_man_vsaiactivity);
     }
-    public void first_play(View v){
+
+    public void first_play(View v) {
         LinearLayout cc = findViewById(R.id.choice);
         LinearLayout bb = findViewById(R.id.box);
         cc.setVisibility(View.GONE);
         bb.setVisibility(View.VISIBLE);
         wait_exchange(set(clock + 1));
-        isaifirst=0;
+        isaifirst = 0;
     }
-    public void second_play(View v){
+
+    public void second_play(View v) {
         LinearLayout cc = findViewById(R.id.choice);
         LinearLayout bb = findViewById(R.id.box);
         cc.setVisibility(View.GONE);
         bb.setVisibility(View.VISIBLE);
         wait_exchange(set(clock + 1));
-        isaifirst=1;
+        isaifirst = 1;
         int i = randint() % 4;
         play(i);
     }
+
     public void ai_turn() {
         if (isaifirst == 1) {
             play_first(history[0]);
@@ -1529,7 +1532,7 @@ public class ManVSAIActivity extends AppCompatActivity {
                         int i = randint() % 2;
                         switch (i) {
                             case 0:
-                                play((g + 1) % 4 );
+                                play((g + 1) % 4);
                                 break;
                             case 1:
                                 play((g + 3) % 4);
@@ -1779,9 +1782,9 @@ public class ManVSAIActivity extends AppCompatActivity {
         if (isable) {
             TextView tv = findViewById(v.getId());
             tv.setText(s);
-            if (isaifirst==1&&clock!=9){
+            if (isaifirst == 1 && clock != 9) {
                 wait_exchange(s);
-            }else if (isaifirst==0&&clock!=8){
+            } else if (isaifirst == 0 && clock != 8) {
                 wait_exchange(s);
             }
             clock++;
@@ -1851,7 +1854,7 @@ public class ManVSAIActivity extends AppCompatActivity {
                 who2.setVisibility(View.GONE);
                 wait.setVisibility(View.GONE);
             }
-        } else if (isaifirst == 0){
+        } else if (isaifirst == 0) {
             if (s.equals("X")) {
                 who1.setVisibility(View.VISIBLE);
                 who2.setVisibility(View.GONE);

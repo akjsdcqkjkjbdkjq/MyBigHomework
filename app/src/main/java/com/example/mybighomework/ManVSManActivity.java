@@ -8,11 +8,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ManVSManActivity extends AppCompatActivity {
-    int[][] place = {
-            {0, 0, 0},
-            {0, 0, 0},
-            {0, 0, 0}
-    };
+    int[][] place = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
     int clock = 0;
     int res = 0;
 
