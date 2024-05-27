@@ -145,10 +145,10 @@ public class ManVSAIActivity extends AppCompatActivity {
                         play((k + 3) % 4);
                     }
                     if (history[6] == (k + 3) % 4) {
-                        if (clock == 8 && history[7] != (k + 1) % 4 + 4) {
-                            play((k + 1) % 4 + 4);
-                        } else if (clock == 8) {
+                        if (clock == 8 && history[7] != (k + 3) % 4 + 4) {
                             play((k + 3) % 4 + 4);
+                        } else if (clock == 8) {
+                            play((k + 1) % 4 + 4);
                         }
                     }
                 } else if (history[4] == (k + 3) % 4 + 4) {
@@ -535,25 +535,9 @@ public class ManVSAIActivity extends AppCompatActivity {
                             break;
                     }
                 } else if (clock == 7 && history[2] == (k + 3) % 4 + 4 && history[6] == (k + 2) % 4 + 4) {
-                    int i = randint() % 2;
-                    switch (i) {
-                        case 0:
-                            play(k % 4 + 4);
-                            break;
-                        case 1:
-                            play((k + 2) % 4);
-                            break;
-                    }
+                    play((k + 2) % 4);
                 } else if (clock == 7 && history[2] == (k + 3) % 4 + 4 && history[6] == (k + 2) % 4) {
-                    int i = randint() % 2;
-                    switch (i) {
-                        case 0:
-                            play((k + 2) % 4 + 4);
-                            break;
-                        case 1:
-                            play(k % 4 + 4);
-                            break;
-                    }
+                    play((k + 2) % 4 + 4);
                 } else if (clock == 7 && history[2] != (k + 3) % 4 + 4 && history[6] == (k + 3) % 4 + 4) {
                     int i = randint() % 2;
                     switch (i) {
@@ -584,25 +568,9 @@ public class ManVSAIActivity extends AppCompatActivity {
                             break;
                     }
                 } else if (clock == 7 && history[2] == (k + 2) % 4 + 4 && history[6] == (k + 3) % 4 + 4) {
-                    int i = randint() % 2;
-                    switch (i) {
-                        case 0:
-                            play((k + 1) % 4 + 4);
-                            break;
-                        case 1:
-                            play((k + 2) % 4);
-                            break;
-                    }
+                    play((k + 2) % 4);
                 } else if (clock == 7 && history[2] == (k + 2) % 4 + 4 && history[6] == (k + 2) % 4) {
-                    int i = randint() % 2;
-                    switch (i) {
-                        case 0:
-                            play((k + 3) % 4 + 4);
-                            break;
-                        case 1:
-                            play((k + 1) % 4 + 4);
-                            break;
-                    }
+                    play((k + 3) % 4 + 4);
                 } else if (clock == 7 && history[2] != (k + 2) % 4 + 4 && history[6] == (k + 2) % 4 + 4) {
                     int i = randint() % 2;
                     switch (i) {
@@ -710,7 +678,7 @@ public class ManVSAIActivity extends AppCompatActivity {
         } else if (k >= 4 && k <= 7) {
             if (clock == 1) {
                 g = k - 4;
-                int i = randint() % 4;
+                int i = randint() % 3;
                 switch (i) {
                     case 0:
                         play(g % 4);
@@ -720,9 +688,6 @@ public class ManVSAIActivity extends AppCompatActivity {
                         break;
                     case 2:
                         play(8);
-                        break;
-                    case 3:
-                        play((g + 2) % 4 + 4);
                         break;
                 }
             }
@@ -1490,73 +1455,6 @@ public class ManVSAIActivity extends AppCompatActivity {
                         }
                     }
                 }
-            } else if (history[1] == (g + 2) % 4 + 4) {
-                if (clock == 3&&history[2]==(g+3)%4) {
-                    play(g%4);
-                } else if (clock == 3&&history[2]==g%4) {
-                    play((g+3)%4);
-                } else if (clock == 3&&history[2]==(g+3)%4+4) {
-                    int i = randint() % 3;
-                    switch (i) {
-                        case 0:
-                            play((g+1)%4);
-                            break;
-                        case 1:
-                            play((g) % 4);
-                            break;
-                        case 2:
-                            play((g+3)%4);
-                            break;
-                    }
-                } else if (clock == 3&&history[2]==(g+1)%4+4) {
-                    int i = randint() % 3;
-                    switch (i) {
-                        case 0:
-                            play((g+2)%4);
-                            break;
-                        case 1:
-                            play((g+3) % 4);
-                            break;
-                        case 2:
-                            play((g)%4);
-                            break;
-                    }
-                } else if (clock == 3&&(history[2]==(g+2)%4||history[2]==(g+1)%4)) {
-                    int i = randint() % 2;
-                    switch (i) {
-                        case 0:
-                            play((g+3)%4);
-                            break;
-                        case 1:
-                            play((g) % 4);
-                            break;
-                    }
-                } else if (clock == 3&&history[2]==8) {
-                    int i = randint() % 4;
-                    switch (i) {
-                        case 0:
-                            play((g+2)%4);
-                            break;
-                        case 1:
-                            play((g+3) % 4);
-                            break;
-                        case 2:
-                            play((g)%4);
-                            break;
-                        case 3:
-                            play((g+1)%4);
-                            break;
-                    }
-                }
-                if (history[3]==(g+3)%4){
-
-                } else if (history[3]==(g)%4) {
-
-                } else if (history[3]==(g+2)%4) {
-
-                } else if (history[3]==(g+1)%4) {
-
-                }
             }
         } else if (k == 8) {
             if (clock == 1) {
@@ -1881,7 +1779,11 @@ public class ManVSAIActivity extends AppCompatActivity {
         if (isable) {
             TextView tv = findViewById(v.getId());
             tv.setText(s);
-            wait_exchange(s);
+            if (isaifirst==1&&clock!=9){
+                wait_exchange(s);
+            }else if (isaifirst==0&&clock!=8){
+                wait_exchange(s);
+            }
             clock++;
             judge();
             if (clock == 9 && res == 0) {
@@ -1939,7 +1841,7 @@ public class ManVSAIActivity extends AppCompatActivity {
         TextView who1 = findViewById(R.id.man_vs_ai_who_1);
         TextView who2 = findViewById(R.id.man_vs_ai_who_2);
         ProgressBar wait = findViewById(R.id.man_vs_ai_wait);
-        if (isaifirst == 1&&clock!=8) {
+        if (isaifirst == 1) {
             if (s.equals("X")) {
                 who1.setVisibility(View.GONE);
                 who2.setVisibility(View.VISIBLE);
@@ -1949,7 +1851,7 @@ public class ManVSAIActivity extends AppCompatActivity {
                 who2.setVisibility(View.GONE);
                 wait.setVisibility(View.GONE);
             }
-        } else if (isaifirst == 0&&clock!=8){
+        } else if (isaifirst == 0){
             if (s.equals("X")) {
                 who1.setVisibility(View.VISIBLE);
                 who2.setVisibility(View.GONE);
