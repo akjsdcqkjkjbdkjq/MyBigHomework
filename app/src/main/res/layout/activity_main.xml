@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/main_title"
@@ -15,7 +16,8 @@
         android:layout_marginBottom="15dp"
         android:gravity="center"
         android:text="@string/main_title"
-        android:textSize="50sp" />
+        android:textSize="50sp"
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/main_button_2"
@@ -23,7 +25,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:text="@string/main_button_2"
-        android:textSize="35sp" />
+        android:textSize="35sp"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:background="@drawable/button" />
 
     <Button
         android:id="@+id/main_button_1"
@@ -31,6 +36,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:text="@string/main_button_1"
-        android:textSize="35sp" />
+        android:textSize="35sp"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:background="@drawable/button" />
 
 </LinearLayout>

@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ManVSManActivity">
+    tools:context=".ManVSManActivity"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/man_vs_man_who_1"
@@ -16,7 +17,8 @@
         android:gravity="center"
         android:text="@string/mmw1"
         android:textSize="50sp"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:textColor="@color/black"/>
 
     <LinearLayout
         android:layout_width="315dp"
@@ -25,6 +27,7 @@
         tools:ignore="TextSizeCheck">
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/man_vs_man_place_1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -42,6 +45,7 @@
             android:background="@color/black" />
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/man_vs_man_place_2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -59,6 +63,7 @@
             android:background="@color/black" />
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/man_vs_man_place_3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -83,6 +88,7 @@
         tools:ignore="TextSizeCheck">
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/man_vs_man_place_4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -100,6 +106,7 @@
             android:background="@color/black" />
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/man_vs_man_place_5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -117,6 +124,7 @@
             android:background="@color/black" />
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/man_vs_man_place_6"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -141,6 +149,7 @@
         tools:ignore="TextSizeCheck">
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/man_vs_man_place_7"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -158,6 +167,7 @@
             android:background="@color/black" />
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/man_vs_man_place_8"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -175,6 +185,7 @@
             android:background="@color/black" />
 
         <TextView
+            android:textColor="@color/black"
             android:id="@+id/man_vs_man_place_9"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -187,6 +198,7 @@
     </LinearLayout>
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/man_vs_man_who_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
