@@ -7,7 +7,7 @@
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".ManVSManActivity"
-    android:background="@color/white">
+    android:background="@drawable/bgg">
 
     <TextView
         android:id="@+id/man_vs_man_who_1"
