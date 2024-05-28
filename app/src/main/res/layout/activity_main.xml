@@ -11,13 +11,15 @@
 
     <TextView
         android:id="@+id/main_title"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
+        android:padding="10dp"
+        android:background="@drawable/pbg6"
         android:gravity="center"
         android:text="@string/main_title"
-        android:textSize="50sp"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="50sp" />
 
     <Button
         android:id="@+id/main_button_2"

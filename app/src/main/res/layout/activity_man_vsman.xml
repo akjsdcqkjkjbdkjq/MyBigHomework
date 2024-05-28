@@ -11,14 +11,16 @@
 
     <TextView
         android:id="@+id/man_vs_man_who_1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
+        android:background="@drawable/pbg6"
         android:gravity="center"
+        android:padding="10dp"
         android:text="@string/mmw1"
+        android:textColor="@color/black"
         android:textSize="50sp"
-        android:visibility="invisible"
-        android:textColor="@color/black"/>
+        android:visibility="invisible" />
 
     <LinearLayout
         android:layout_width="315dp"
@@ -36,6 +38,7 @@
             android:onClick="man_vs_man_place"
             android:text=""
             android:textSize="50sp"
+            android:background="@drawable/pbg_sel"
             tools:text="1" />
 
         <TextView
@@ -54,6 +57,7 @@
             android:onClick="man_vs_man_place"
             android:text=""
             android:textSize="50sp"
+            android:background="@drawable/pbg_sel5"
             tools:text="2" />
 
         <TextView
@@ -72,6 +76,7 @@
             android:onClick="man_vs_man_place"
             android:text=""
             android:textSize="50sp"
+            android:background="@drawable/pbg_sel2"
             tools:text="3" />
     </LinearLayout>
 
@@ -97,6 +102,7 @@
             android:onClick="man_vs_man_place"
             android:text=""
             android:textSize="50sp"
+            android:background="@drawable/pbg_sel5"
             tools:text="4" />
 
         <TextView
@@ -115,6 +121,7 @@
             android:onClick="man_vs_man_place"
             android:text=""
             android:textSize="50sp"
+            android:background="@drawable/pbg_sel5"
             tools:text="5" />
 
         <TextView
@@ -133,6 +140,7 @@
             android:onClick="man_vs_man_place"
             android:text=""
             android:textSize="50sp"
+            android:background="@drawable/pbg_sel5"
             tools:text="6" />
     </LinearLayout>
 
@@ -158,6 +166,7 @@
             android:onClick="man_vs_man_place"
             android:text=""
             android:textSize="50sp"
+            android:background="@drawable/pbg_sel11"
             tools:text="7" />
 
         <TextView
@@ -176,6 +185,7 @@
             android:onClick="man_vs_man_place"
             android:text=""
             android:textSize="50sp"
+            android:background="@drawable/pbg_sel5"
             tools:text="8" />
 
         <TextView
@@ -194,18 +204,21 @@
             android:onClick="man_vs_man_place"
             android:text=""
             android:textSize="50sp"
+            android:background="@drawable/pbg_sel4"
             tools:text="9" />
     </LinearLayout>
 
     <TextView
-        android:textColor="@color/black"
         android:id="@+id/man_vs_man_who_2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:gravity="center"
         android:text="@string/mmw2"
+        android:textColor="@color/black"
         android:textSize="50sp"
+        android:padding="10dp"
+        android:background="@drawable/pbg6"
         android:visibility="visible" />
 
 </LinearLayout>
