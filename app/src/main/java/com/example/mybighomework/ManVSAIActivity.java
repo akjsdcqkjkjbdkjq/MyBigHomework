@@ -640,7 +640,7 @@ public class ManVSAIActivity extends AppCompatActivity {
                     if (clock == 7 && history[6] != (k + 1) % 4) {
                         play((k + 1) % 4);
                     } else if (clock == 7 && history[6] == (k + 1) % 4) {
-                        play((k + 1) % 4 + 4);
+                        play((k ) % 4 + 4);
                     }
                 } else if (history[5] == k % 4 + 4) {
                     if (clock == 7 && history[6] != (k + 2) % 4 + 4) {
