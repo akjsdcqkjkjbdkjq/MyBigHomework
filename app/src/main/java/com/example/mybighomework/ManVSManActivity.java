@@ -145,8 +145,7 @@ public class ManVSManActivity extends AppCompatActivity {
             s = R.string.xwin;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.gend).setMessage(s).setPositiveButton(R.string.newgame, (dialog, which) -> recreate()).setNegativeButton(R.string.endgame, (dialog, which) -> finish());
-        builder.create().show();
+        builder.setTitle(R.string.gend).setMessage(s).setPositiveButton(R.string.newgame, (dialog, which) -> recreate()).setNegativeButton(R.string.endgame, (dialog, which) -> finish()).setCancelable(false).create().show();
     }
 
     public void judge() {
