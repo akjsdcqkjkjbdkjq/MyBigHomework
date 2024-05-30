@@ -244,6 +244,12 @@ public class ManVSAIActivity extends AppCompatActivity {
                         } else if (clock == 8) {
                             play((k + 1) % 4 + 4);
                         }
+                    } else if (history[6] == (k + 2) % 4) {
+                        if (clock == 8 && history[7] != (k + 1) % 4) {
+                            play((k + 1) % 4);
+                        } else if (clock == 8) {
+                            play((k+3) % 4 + 4);
+                        }
                     }
                 } else if (history[4] == (k + 1) % 4) {
                     if (clock == 6 && history[5] != (k + 1) % 4 + 4) {
@@ -334,6 +340,12 @@ public class ManVSAIActivity extends AppCompatActivity {
                             play((k + 2) % 4);
                         } else if (clock == 8) {
                             play((k) % 4 + 4);
+                        }
+                    } else if (history[6] == (k + 2) % 4) {
+                        if (clock == 8 && history[7] != (k + 1) % 4) {
+                            play((k + 1) % 4);
+                        } else if (clock == 8) {
+                            play((k+3) % 4 + 4);
                         }
                     }
                 } else if (history[4] == (k + 3) % 4) {
