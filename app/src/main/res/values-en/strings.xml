@@ -18,6 +18,6 @@
     <string name="secondplay">Second</string>
     <string name="rollback">Roll Back</string>
     <string name="info">About</string>
-    <string name="about">aaaa</string>
+    <string name="about">"        Tic-Tac-Toe is a game of noughts and crosses played on a 3X3 grid, named for the zigzag pattern formed by the grid lines when no borders are drawn. Players, symbolized by O and X, take turns placing their marks on the grid. The first to form a straight line wins."</string>
     <string name="abouttitle">About</string>
 </resources>
