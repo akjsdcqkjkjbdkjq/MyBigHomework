@@ -15,5 +15,5 @@
     <string name="even">平局</string>
     <string name="firstplay">先手</string>
     <string name="secondplay">后手</string>
-
+    <string name="rollback">悔棋</string>
 </resources>

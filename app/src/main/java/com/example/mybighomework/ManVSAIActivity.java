@@ -1,9 +1,7 @@
 package com.example.mybighomework;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -250,7 +248,7 @@ public class ManVSAIActivity extends AppCompatActivity {
                         if (clock == 8 && history[7] != (k + 1) % 4) {
                             play((k + 1) % 4);
                         } else if (clock == 8) {
-                            play((k+3) % 4);
+                            play((k + 3) % 4);
                         }
                     }
                 } else if (history[4] == (k + 1) % 4) {
@@ -347,7 +345,7 @@ public class ManVSAIActivity extends AppCompatActivity {
                         if (clock == 8 && history[7] != (k + 1) % 4) {
                             play((k + 1) % 4);
                         } else if (clock == 8) {
-                            play((k+3) % 4);
+                            play((k + 3) % 4);
                         }
                     }
                 } else if (history[4] == (k + 3) % 4) {
@@ -654,7 +652,7 @@ public class ManVSAIActivity extends AppCompatActivity {
                     if (clock == 7 && history[6] != (k + 1) % 4) {
                         play((k + 1) % 4);
                     } else if (clock == 7 && history[6] == (k + 1) % 4) {
-                        play((k +2) % 4 + 4);
+                        play((k + 2) % 4 + 4);
                     }
                 } else if (history[5] == k % 4 + 4) {
                     if (clock == 7 && history[6] != (k + 2) % 4 + 4) {
@@ -1857,26 +1855,21 @@ public class ManVSAIActivity extends AppCompatActivity {
     public void wait_exchange(String s) {
         TextView who1 = findViewById(R.id.man_vs_ai_who_1);
         TextView who2 = findViewById(R.id.man_vs_ai_who_2);
-        ProgressBar wait = findViewById(R.id.man_vs_ai_wait);
         if (isaifirst == 1) {
             if (s.equals("X")) {
                 who1.setVisibility(View.GONE);
                 who2.setVisibility(View.VISIBLE);
-                wait.setVisibility(View.VISIBLE);
             } else {
                 who1.setVisibility(View.VISIBLE);
                 who2.setVisibility(View.GONE);
-                wait.setVisibility(View.GONE);
             }
         } else if (isaifirst == 0) {
             if (s.equals("X")) {
                 who1.setVisibility(View.VISIBLE);
                 who2.setVisibility(View.GONE);
-                wait.setVisibility(View.GONE);
             } else {
                 who1.setVisibility(View.GONE);
                 who2.setVisibility(View.VISIBLE);
-                wait.setVisibility(View.VISIBLE);
             }
         }
     }
@@ -1934,5 +1927,54 @@ public class ManVSAIActivity extends AppCompatActivity {
             res = -1;
             show(res);
         }
+    }
+
+    public void roll_back() {
+        if (clock > 1 && clock < 9 && res == 0) {
+            if (history[clock - 1] == 0) {
+                TextView pl = findViewById(R.id.man_vs_ai_place_0);
+                pl.setText("");
+                place[0][0] = 0;
+            } else if (history[clock - 1] == 5) {
+                TextView pl = findViewById(R.id.man_vs_ai_place_5);
+                pl.setText("");
+                place[0][1] = 0;
+            } else if (history[clock - 1] == 1) {
+                TextView pl = findViewById(R.id.man_vs_ai_place_1);
+                pl.setText("");
+                place[0][2] = 0;
+            } else if (history[clock - 1] == 4) {
+                TextView pl = findViewById(R.id.man_vs_ai_place_4);
+                pl.setText("");
+                place[1][0] = 0;
+            } else if (history[clock - 1] == 8) {
+                TextView pl = findViewById(R.id.man_vs_ai_place_8);
+                pl.setText("");
+                place[1][1] = 0;
+            } else if (history[clock - 1] == 6) {
+                TextView pl = findViewById(R.id.man_vs_ai_place_6);
+                pl.setText("");
+                place[1][2] = 0;
+            } else if (history[clock - 1] == 3) {
+                TextView pl = findViewById(R.id.man_vs_ai_place_3);
+                pl.setText("");
+                place[2][0] = 0;
+            } else if (history[clock - 1] == 7) {
+                TextView pl = findViewById(R.id.man_vs_ai_place_7);
+                pl.setText("");
+                place[2][1] = 0;
+            } else if (history[clock - 1] == 2) {
+                TextView pl = findViewById(R.id.man_vs_ai_place_2);
+                pl.setText("");
+                place[2][2] = 0;
+            }
+            history[clock - 1] = -1;
+            clock--;
+        }
+    }
+
+    public void roll_back_back(View view) {
+        roll_back();
+        roll_back();
     }
 }

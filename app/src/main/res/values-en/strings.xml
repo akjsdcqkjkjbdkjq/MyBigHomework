@@ -16,4 +16,5 @@
     <string name="even">Even</string>
     <string name="firstplay">First</string>
     <string name="secondplay">Second</string>
+    <string name="rollback">Roll Back</string>
 </resources>

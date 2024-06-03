@@ -4,10 +4,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bgg"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ManVSManActivity"
-    android:background="@drawable/bgg">
+    tools:context=".ManVSManActivity">
 
     <TextView
         android:id="@+id/man_vs_man_who_1"
@@ -29,16 +29,16 @@
         tools:ignore="TextSizeCheck">
 
         <TextView
-            android:textColor="@color/black"
             android:id="@+id/man_vs_man_place_1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/pbg_sel"
             android:gravity="center"
             android:onClick="man_vs_man_place"
             android:text=""
+            android:textColor="@color/black"
             android:textSize="50sp"
-            android:background="@drawable/pbg_sel"
             tools:text="1" />
 
         <TextView
@@ -48,16 +48,16 @@
             android:background="@color/black" />
 
         <TextView
-            android:textColor="@color/black"
             android:id="@+id/man_vs_man_place_2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/pbg_sel5"
             android:gravity="center"
             android:onClick="man_vs_man_place"
             android:text=""
+            android:textColor="@color/black"
             android:textSize="50sp"
-            android:background="@drawable/pbg_sel5"
             tools:text="2" />
 
         <TextView
@@ -67,16 +67,16 @@
             android:background="@color/black" />
 
         <TextView
-            android:textColor="@color/black"
             android:id="@+id/man_vs_man_place_3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/pbg_sel2"
             android:gravity="center"
             android:onClick="man_vs_man_place"
             android:text=""
+            android:textColor="@color/black"
             android:textSize="50sp"
-            android:background="@drawable/pbg_sel2"
             tools:text="3" />
     </LinearLayout>
 
@@ -93,16 +93,16 @@
         tools:ignore="TextSizeCheck">
 
         <TextView
-            android:textColor="@color/black"
             android:id="@+id/man_vs_man_place_4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/pbg_sel5"
             android:gravity="center"
             android:onClick="man_vs_man_place"
             android:text=""
+            android:textColor="@color/black"
             android:textSize="50sp"
-            android:background="@drawable/pbg_sel5"
             tools:text="4" />
 
         <TextView
@@ -112,16 +112,16 @@
             android:background="@color/black" />
 
         <TextView
-            android:textColor="@color/black"
             android:id="@+id/man_vs_man_place_5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/pbg_sel5"
             android:gravity="center"
             android:onClick="man_vs_man_place"
             android:text=""
+            android:textColor="@color/black"
             android:textSize="50sp"
-            android:background="@drawable/pbg_sel5"
             tools:text="5" />
 
         <TextView
@@ -131,16 +131,16 @@
             android:background="@color/black" />
 
         <TextView
-            android:textColor="@color/black"
             android:id="@+id/man_vs_man_place_6"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/pbg_sel5"
             android:gravity="center"
             android:onClick="man_vs_man_place"
             android:text=""
+            android:textColor="@color/black"
             android:textSize="50sp"
-            android:background="@drawable/pbg_sel5"
             tools:text="6" />
     </LinearLayout>
 
@@ -157,16 +157,16 @@
         tools:ignore="TextSizeCheck">
 
         <TextView
-            android:textColor="@color/black"
             android:id="@+id/man_vs_man_place_7"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/pbg_sel11"
             android:gravity="center"
             android:onClick="man_vs_man_place"
             android:text=""
+            android:textColor="@color/black"
             android:textSize="50sp"
-            android:background="@drawable/pbg_sel11"
             tools:text="7" />
 
         <TextView
@@ -176,16 +176,16 @@
             android:background="@color/black" />
 
         <TextView
-            android:textColor="@color/black"
             android:id="@+id/man_vs_man_place_8"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/pbg_sel5"
             android:gravity="center"
             android:onClick="man_vs_man_place"
             android:text=""
+            android:textColor="@color/black"
             android:textSize="50sp"
-            android:background="@drawable/pbg_sel5"
             tools:text="8" />
 
         <TextView
@@ -195,16 +195,16 @@
             android:background="@color/black" />
 
         <TextView
-            android:textColor="@color/black"
             android:id="@+id/man_vs_man_place_9"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/pbg_sel4"
             android:gravity="center"
             android:onClick="man_vs_man_place"
             android:text=""
+            android:textColor="@color/black"
             android:textSize="50sp"
-            android:background="@drawable/pbg_sel4"
             tools:text="9" />
     </LinearLayout>
 
@@ -213,12 +213,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:background="@drawable/pbg6"
         android:gravity="center"
+        android:padding="10dp"
         android:text="@string/mmw2"
         android:textColor="@color/black"
         android:textSize="50sp"
-        android:padding="10dp"
-        android:background="@drawable/pbg6"
         android:visibility="visible" />
 
 </LinearLayout>
