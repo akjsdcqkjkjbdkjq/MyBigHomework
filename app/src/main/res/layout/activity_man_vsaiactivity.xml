@@ -276,7 +276,7 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/button_sel"
             android:gravity="center"
-            android:onClick="roll_back_back"
+            android:onClick="roll_back"
             android:padding="10dp"
             android:text="@string/rollback"
             android:textColor="@color/white"

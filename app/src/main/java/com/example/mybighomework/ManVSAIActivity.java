@@ -1928,52 +1928,55 @@ public class ManVSAIActivity extends AppCompatActivity {
         }
     }
 
-    public void roll_back() {
-        if (clock > 1 && clock < 9 && res == 0) {
-            if (history[clock - 1] == 0) {
-                TextView pl = findViewById(R.id.man_vs_ai_place_0);
-                pl.setText("");
-                place[0][0] = 0;
-            } else if (history[clock - 1] == 5) {
-                TextView pl = findViewById(R.id.man_vs_ai_place_5);
-                pl.setText("");
-                place[0][1] = 0;
-            } else if (history[clock - 1] == 1) {
-                TextView pl = findViewById(R.id.man_vs_ai_place_1);
-                pl.setText("");
-                place[0][2] = 0;
-            } else if (history[clock - 1] == 4) {
-                TextView pl = findViewById(R.id.man_vs_ai_place_4);
-                pl.setText("");
-                place[1][0] = 0;
-            } else if (history[clock - 1] == 8) {
-                TextView pl = findViewById(R.id.man_vs_ai_place_8);
-                pl.setText("");
-                place[1][1] = 0;
-            } else if (history[clock - 1] == 6) {
-                TextView pl = findViewById(R.id.man_vs_ai_place_6);
-                pl.setText("");
-                place[1][2] = 0;
-            } else if (history[clock - 1] == 3) {
-                TextView pl = findViewById(R.id.man_vs_ai_place_3);
-                pl.setText("");
-                place[2][0] = 0;
-            } else if (history[clock - 1] == 7) {
-                TextView pl = findViewById(R.id.man_vs_ai_place_7);
-                pl.setText("");
-                place[2][1] = 0;
-            } else if (history[clock - 1] == 2) {
-                TextView pl = findViewById(R.id.man_vs_ai_place_2);
-                pl.setText("");
-                place[2][2] = 0;
+    public void roll_back(View v) {
+        int k=2;
+        while (k>0){
+            k--;
+            if (clock > 0 && clock < 9 && res == 0) {
+                if (history[clock - 1] == 0) {
+                    TextView pl = findViewById(R.id.man_vs_ai_place_0);
+                    pl.setText("");
+                    place[0][0] = 0;
+                } else if (history[clock - 1] == 5) {
+                    TextView pl = findViewById(R.id.man_vs_ai_place_5);
+                    pl.setText("");
+                    place[0][1] = 0;
+                } else if (history[clock - 1] == 1) {
+                    TextView pl = findViewById(R.id.man_vs_ai_place_1);
+                    pl.setText("");
+                    place[0][2] = 0;
+                } else if (history[clock - 1] == 4) {
+                    TextView pl = findViewById(R.id.man_vs_ai_place_4);
+                    pl.setText("");
+                    place[1][0] = 0;
+                } else if (history[clock - 1] == 8) {
+                    TextView pl = findViewById(R.id.man_vs_ai_place_8);
+                    pl.setText("");
+                    place[1][1] = 0;
+                } else if (history[clock - 1] == 6) {
+                    TextView pl = findViewById(R.id.man_vs_ai_place_6);
+                    pl.setText("");
+                    place[1][2] = 0;
+                } else if (history[clock - 1] == 3) {
+                    TextView pl = findViewById(R.id.man_vs_ai_place_3);
+                    pl.setText("");
+                    place[2][0] = 0;
+                } else if (history[clock - 1] == 7) {
+                    TextView pl = findViewById(R.id.man_vs_ai_place_7);
+                    pl.setText("");
+                    place[2][1] = 0;
+                } else if (history[clock - 1] == 2) {
+                    TextView pl = findViewById(R.id.man_vs_ai_place_2);
+                    pl.setText("");
+                    place[2][2] = 0;
+                }
+                history[clock - 1] = -1;
+                clock--;
+                if (isaifirst==1&&clock==0){
+                    play(randint()%4);
+                    break;
+                }
             }
-            history[clock - 1] = -1;
-            clock--;
         }
-    }
-
-    public void roll_back_back(View view) {
-        roll_back();
-        roll_back();
     }
 }

@@ -17,4 +17,7 @@
     <string name="firstplay">先手</string>
     <string name="secondplay">后手</string>
     <string name="rollback">悔棋</string>
+    <string name="info">关于井字棋</string>
+    <string name="about">aaaa</string>
+    <string name="abouttitle">关于井字棋</string>
 </resources>

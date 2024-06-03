@@ -17,4 +17,7 @@
     <string name="firstplay">First</string>
     <string name="secondplay">Second</string>
     <string name="rollback">Roll Back</string>
+    <string name="info">About</string>
+    <string name="about">aaaa</string>
+    <string name="abouttitle">About</string>
 </resources>
