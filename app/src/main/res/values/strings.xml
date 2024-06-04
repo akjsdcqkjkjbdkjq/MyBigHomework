@@ -18,5 +18,12 @@
     <string name="rollback">悔棋</string>
     <string name="info">关于井字棋</string>
     <string name="about">\u3000\u3000井字棋是一种在3X3格子上进行的连珠游戏，由于棋盘一般不画边框，格线排成井字故得名。\n\u3000\u3000由分别代表O和X的两个游戏者轮流在格子里留下标记，任意三个标记形成一条直线，则为获胜。</string>
-    <string name="abouttitle">关于井字棋</string>
+    <string name="abouttitle">井字棋说明</string>
+    <string name="law1">健康游戏忠告</string>
+    <string name="law2">抵制不良游戏，拒绝盗版游戏。</string>
+    <string name="law3">注意自我保护，谨防受骗上当。</string>
+    <string name="law4">适度游戏益脑，沉迷游戏伤身。</string>
+    <string name="law5">合理安排时间，享受健康生活。</string>
+    <string name="start">开始游戏</string>
+    <string name="advice">本游戏适合年满8周岁以上的用户使用:为了您的健康，请合理控制游戏时间。</string>
 </resources>
