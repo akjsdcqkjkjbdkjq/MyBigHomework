@@ -28,6 +28,6 @@
     <string name="start">Start Game</string>
     <string name="advice">NO 8 NO PLAY</string>
     <string name="notice">Age Warning</string>
-    <string name="noticebody">aaaaa</string>
+    <string name="noticebody">(1) This game is a turn-based strategy game suitable for users aged 8 and above. It is recommended that minors use the game product under parental supervision. \n\n(2) This game is not based on fictional background stories or worldviews. The game requires two or even one player to play, and players will engage in challenging matches on the chessboard, encouraging them to think and improving their thinking and judgment abilities. The game has slight player-to-player competitive content, and there is no social system based on text and voice. \n\n(3) This game does not have a real name authentication system or any paid content. \n\n(4) This game is a turn-based strategy game where players can exercise their thinking and imagination during the gameplay. The game features powerful computer players to test their judgment and stress resistance. The bright and soft art style can bring players a positive and enjoyable emotional experience.</string>
     <string name="noticebt">OK</string>
 </resources>
