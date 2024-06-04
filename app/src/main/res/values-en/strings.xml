@@ -27,4 +27,7 @@
     <string name="law5">HAVE FUN</string>
     <string name="start">Start Game</string>
     <string name="advice">NO 8 NO PLAY</string>
+    <string name="notice">Age Warning</string>
+    <string name="noticebody">aaaaa</string>
+    <string name="noticebt">OK</string>
 </resources>

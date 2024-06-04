@@ -27,4 +27,7 @@
     <string name="law5">合理安排时间，享受健康生活。</string>
     <string name="start">开始游戏</string>
     <string name="advice">本游戏适合年满8周岁以上的用户使用:为了您的健康，请合理控制游戏时间。</string>
+    <string name="notice">适龄提示</string>
+    <string name="noticebody">啊啊啊啊啊啊啊哇哇</string>
+    <string name="noticebt">确定</string>
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -9,48 +10,167 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/main_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/pbg6"
+    <LinearLayout
+        android:id="@+id/lawbox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:padding="10dp"
-        android:text="@string/main_title"
-        android:textColor="@color/black"
-        android:textSize="50sp" />
+        android:orientation="vertical"
+        android:visibility="visible">
 
-    <Button
-        android:id="@+id/main_button_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/button_sel"
-        android:padding="20dp"
-        android:text="@string/main_button_2"
-        android:textColor="@color/white"
-        android:textSize="35sp" />
+        <TextView
+            android:id="@+id/law1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/law1"
+            android:textColor="@color/black"
+            android:textSize="35sp" />
 
-    <Button
-        android:id="@+id/main_button_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/button_sel"
-        android:padding="20dp"
-        android:text="@string/main_button_1"
-        android:textColor="@color/white"
-        android:textSize="35sp" />
+        <TextView
+            android:id="@+id/law2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/law2"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
 
-    <Button
-        android:id="@+id/main_button_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_sel"
-        android:padding="15dp"
-        android:text="@string/info"
-        android:textColor="@color/white"
-        android:textSize="30sp" />
+        <TextView
+            android:id="@+id/law3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/law3"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/law4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/law4"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/law5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/law5"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/main_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button_sel"
+            android:padding="15dp"
+            android:text="@string/start"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mainbox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/age_limit"
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:onClick="age_limit"
+                app:srcCompat="@drawable/agelimit"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/main_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/pbg6"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/main_title"
+                android:textColor="@color/black"
+                android:textSize="50sp" />
+
+            <Button
+                android:id="@+id/main_button_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/button_sel"
+                android:padding="20dp"
+                android:text="@string/main_button_2"
+                android:textColor="@color/white"
+                android:textSize="35sp" />
+
+            <Button
+                android:id="@+id/main_button_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/button_sel"
+                android:padding="20dp"
+                android:text="@string/main_button_1"
+                android:textColor="@color/white"
+                android:textSize="35sp" />
+
+            <Button
+                android:id="@+id/main_button_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_sel"
+                android:padding="15dp"
+                android:text="@string/info"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_weight="1"
+            android:gravity="bottom|center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/advice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="@string/advice"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>
